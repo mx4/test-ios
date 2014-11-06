@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  BlockListController.h
 //  SimpleTest
 //
 //  Created by Maxime Austruy on 05/11/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
-
+@interface BlockListController : UITableViewController
 
 @end
-

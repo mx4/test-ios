@@ -1,18 +1,18 @@
 //
-//  FirstViewController.m
+//  SecondViewController.m
 //  SimpleTest
 //
 //  Created by Maxime Austruy on 05/11/14.
 //  Copyright (c) 2014 Maxime Austruy. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "DashboardController.h"
 
-@interface FirstViewController ()
+@interface DashboardController ()
 
 @end
 
-@implementation FirstViewController
+@implementation DashboardController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

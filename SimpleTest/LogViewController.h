@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  LogViewController.h
 //  SimpleTest
 //
 //  Created by Maxime Austruy on 05/11/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
-
+@interface LogViewController : UIViewController
 
 @end
-
