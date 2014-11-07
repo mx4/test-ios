@@ -50,7 +50,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="scrollIndicatorInsets" minX="0.0" minY="30" maxX="0.0" maxY="10"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BlockCell" textLabel="WQ5-f3-vOS" rowHeight="40" style="IBUITableViewCellStyleDefault" id="078-Jk-knc">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="BlockCell" textLabel="WQ5-f3-vOS" rowHeight="40" style="IBUITableViewCellStyleDefault" id="078-Jk-knc">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="078-Jk-knc" id="7z1-8b-23C">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -63,6 +63,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="zvr-lb-2EC" kind="show" identifier="ShowBlockDetail" trigger="accessoryAction" id="rcZ-hS-TQl"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -71,10 +74,43 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Recent Blocks" id="WJu-pe-iJW"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="pdO-ga-XH4">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZX2-J7-Nh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2" y="156"/>
+        </scene>
+        <!--Block Detail-->
+        <scene sceneID="jqe-cB-gXM">
+            <objects>
+                <viewController storyboardIdentifier="Detail" title="Block Detail" id="zvr-lb-2EC" customClass="BlockDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1XP-Lu-bMz"/>
+                        <viewControllerLayoutGuide type="bottom" id="pbm-VL-lKl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9wq-UW-Q5i">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Block Detail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBF-Wv-Dln">
+                                <rect key="frame" x="239" y="108" width="123" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration" label=""/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="cBF-Wv-Dln" secondAttribute="centerX" constant="-0.5" id="OcJ-Iu-PAm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w1T-9k-hrG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="781" y="156"/>
         </scene>
         <!--Logs-->
         <scene sceneID="gYZ-WG-fsf">

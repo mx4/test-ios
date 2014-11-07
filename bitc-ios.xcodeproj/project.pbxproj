@@ -14,6 +14,7 @@
 		9C53A5211A0A0BAD000A4511 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C53A5201A0A0BAD000A4511 /* Images.xcassets */; };
 		9C53A5411A0A1A5F000A4511 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A5401A0A1A5F000A4511 /* LogViewController.m */; };
 		9C53A5441A0A1AC4000A4511 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A5431A0A1AC4000A4511 /* SettingsViewController.m */; };
+		9CD6200E1A0CBCFD0014E9D7 /* BlockDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6200D1A0CBCFD0014E9D7 /* BlockDetailViewController.m */; };
 		9CE4B4F31A0AD41C005E878D /* BlockListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4B4F21A0AD41C005E878D /* BlockListController.m */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,8 @@
 		9C53A5401A0A1A5F000A4511 /* LogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogViewController.m; sourceTree = "<group>"; };
 		9C53A5421A0A1AC4000A4511 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		9C53A5431A0A1AC4000A4511 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		9CD6200C1A0CBCFD0014E9D7 /* BlockDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockDetailViewController.h; sourceTree = "<group>"; };
+		9CD6200D1A0CBCFD0014E9D7 /* BlockDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockDetailViewController.m; sourceTree = "<group>"; };
 		9CE4B4F11A0AD41C005E878D /* BlockListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockListController.h; sourceTree = "<group>"; };
 		9CE4B4F21A0AD41C005E878D /* BlockListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockListController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +75,8 @@
 				9CE4B4F21A0AD41C005E878D /* BlockListController.m */,
 				9C53A51B1A0A0BAD000A4511 /* DashboardController.m */,
 				9C53A51D1A0A0BAD000A4511 /* Main.storyboard */,
+				9CD6200C1A0CBCFD0014E9D7 /* BlockDetailViewController.h */,
+				9CD6200D1A0CBCFD0014E9D7 /* BlockDetailViewController.m */,
 				9C53A5421A0A1AC4000A4511 /* SettingsViewController.h */,
 				9C53A5431A0A1AC4000A4511 /* SettingsViewController.m */,
 				9C53A53F1A0A1A5F000A4511 /* LogViewController.h */,
@@ -162,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C53A51C1A0A0BAD000A4511 /* DashboardController.m in Sources */,
+				9CD6200E1A0CBCFD0014E9D7 /* BlockDetailViewController.m in Sources */,
 				9C53A5161A0A0BAD000A4511 /* AppDelegate.m in Sources */,
 				9C53A5131A0A0BAD000A4511 /* main.m in Sources */,
 				9CE4B4F31A0AD41C005E878D /* BlockListController.m in Sources */,

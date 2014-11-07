@@ -7,6 +7,7 @@
 //
 
 #import "BlockListController.h"
+#import "BlockDetailViewController.h"
 
 @interface BlockListController ()
 
@@ -16,12 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSLog(@"%s", __FUNCTION__);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,7 +37,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BlockCell"];
     UILabel *title = (UILabel*) [cell viewWithTag:11];
-    title.text = [NSString stringWithFormat:@"Test_%d", indexPath.row];
+    title.text = [NSString stringWithFormat:@"Test_%ld", (long)indexPath.row];
 
     return cell;
 }
@@ -54,14 +50,22 @@
     return NO;
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"%s: %@", __FUNCTION__, [segue identifier]);
+    
+    if ([[segue identifier] isEqualToString:@"ShowBlockDetail"]) {
+        NSLog(@"Following ShowBlockDetails");
+        BlockDetailViewController *detailViewController = [segue destinationViewController];
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        detailViewController.blockNumber = [ NSNumber numberWithInt: (int)indexPath.row];
+    }
+
 }
-*/
 
 @end
