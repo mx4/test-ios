@@ -15,6 +15,15 @@
 		9C53A5411A0A1A5F000A4511 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A5401A0A1A5F000A4511 /* LogViewController.m */; };
 		9C53A5441A0A1AC4000A4511 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A5431A0A1AC4000A4511 /* SettingsViewController.m */; };
 		9CD6200E1A0CBCFD0014E9D7 /* BlockDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6200D1A0CBCFD0014E9D7 /* BlockDetailViewController.m */; };
+		9CE01C451A0D398900FD5A13 /* cJSON.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C3F1A0D398900FD5A13 /* cJSON.c */; };
+		9CE01C461A0D398900FD5A13 /* MurmurHash3.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C411A0D398900FD5A13 /* MurmurHash3.c */; };
+		9CE01C631A0D399700FD5A13 /* config.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C491A0D399700FD5A13 /* config.c */; };
+		9CE01C641A0D399700FD5A13 /* file.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C4B1A0D399700FD5A13 /* file.c */; };
+		9CE01C661A0D399700FD5A13 /* hashtable.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C4F1A0D399700FD5A13 /* hashtable.c */; };
+		9CE01C681A0D399700FD5A13 /* netasync.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C531A0D399700FD5A13 /* netasync.c */; };
+		9CE01C691A0D399700FD5A13 /* poll.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C551A0D399700FD5A13 /* poll.c */; };
+		9CE01C6A1A0D399700FD5A13 /* poolworker.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C571A0D399700FD5A13 /* poolworker.c */; };
+		9CE01C6B1A0D399700FD5A13 /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C621A0D399700FD5A13 /* util.c */; };
 		9CE4B4F31A0AD41C005E878D /* BlockListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4B4F21A0AD41C005E878D /* BlockListController.m */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +43,31 @@
 		9C53A5431A0A1AC4000A4511 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		9CD6200C1A0CBCFD0014E9D7 /* BlockDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockDetailViewController.h; sourceTree = "<group>"; };
 		9CD6200D1A0CBCFD0014E9D7 /* BlockDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockDetailViewController.m; sourceTree = "<group>"; };
+		9CE01C3F1A0D398900FD5A13 /* cJSON.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cJSON.c; sourceTree = "<group>"; };
+		9CE01C411A0D398900FD5A13 /* MurmurHash3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MurmurHash3.c; sourceTree = "<group>"; };
+		9CE01C431A0D398900FD5A13 /* cJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cJSON.h; sourceTree = "<group>"; };
+		9CE01C441A0D398900FD5A13 /* MurmurHash3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MurmurHash3.h; sourceTree = "<group>"; };
+		9CE01C491A0D399700FD5A13 /* config.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = config.c; sourceTree = "<group>"; };
+		9CE01C4B1A0D399700FD5A13 /* file.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = file.c; sourceTree = "<group>"; };
+		9CE01C4F1A0D399700FD5A13 /* hashtable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hashtable.c; sourceTree = "<group>"; };
+		9CE01C531A0D399700FD5A13 /* netasync.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = netasync.c; sourceTree = "<group>"; };
+		9CE01C551A0D399700FD5A13 /* poll.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = poll.c; sourceTree = "<group>"; };
+		9CE01C571A0D399700FD5A13 /* poolworker.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = poolworker.c; sourceTree = "<group>"; };
+		9CE01C591A0D399700FD5A13 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		9CE01C5A1A0D399700FD5A13 /* file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file.h; sourceTree = "<group>"; };
+		9CE01C5B1A0D399700FD5A13 /* hashtable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hashtable.h; sourceTree = "<group>"; };
+		9CE01C5C1A0D399700FD5A13 /* ip_info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ip_info.h; sourceTree = "<group>"; };
+		9CE01C5D1A0D399700FD5A13 /* netasync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = netasync.h; sourceTree = "<group>"; };
+		9CE01C5E1A0D399700FD5A13 /* poll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = poll.h; sourceTree = "<group>"; };
+		9CE01C5F1A0D399700FD5A13 /* poolworker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = poolworker.h; sourceTree = "<group>"; };
+		9CE01C601A0D399700FD5A13 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		9CE01C621A0D399700FD5A13 /* util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = util.c; sourceTree = "<group>"; };
+		9CE01C6D1A0D39AB00FD5A13 /* atomic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = atomic.h; sourceTree = "<group>"; };
+		9CE01C6E1A0D39AB00FD5A13 /* basic_defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = basic_defs.h; sourceTree = "<group>"; };
+		9CE01C6F1A0D39AB00FD5A13 /* bitc-defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "bitc-defs.h"; sourceTree = "<group>"; };
+		9CE01C701A0D39AB00FD5A13 /* bitc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitc.h; sourceTree = "<group>"; };
+		9CE01C711A0D39AB00FD5A13 /* circlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circlist.h; sourceTree = "<group>"; };
+		9CE01C721A0D39AB00FD5A13 /* fx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fx.h; sourceTree = "<group>"; };
 		9CE4B4F11A0AD41C005E878D /* BlockListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockListController.h; sourceTree = "<group>"; };
 		9CE4B4F21A0AD41C005E878D /* BlockListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockListController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,6 +86,9 @@
 		9C53A5041A0A0BAD000A4511 = {
 			isa = PBXGroup;
 			children = (
+				9CE01C6C1A0D39AB00FD5A13 /* public */,
+				9CE01C471A0D399700FD5A13 /* lib */,
+				9CE01C3D1A0D398900FD5A13 /* ext */,
 				9C53A50F1A0A0BAD000A4511 /* bitc-ios */,
 				9C53A50E1A0A0BAD000A4511 /* Products */,
 			);
@@ -95,6 +132,140 @@
 				9C53A5121A0A0BAD000A4511 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9CE01C3D1A0D398900FD5A13 /* ext */ = {
+			isa = PBXGroup;
+			children = (
+				9CE01C3E1A0D398900FD5A13 /* cJSON */,
+				9CE01C401A0D398900FD5A13 /* MurmurHash3 */,
+				9CE01C421A0D398900FD5A13 /* public */,
+			);
+			path = ext;
+			sourceTree = "<group>";
+		};
+		9CE01C3E1A0D398900FD5A13 /* cJSON */ = {
+			isa = PBXGroup;
+			children = (
+				9CE01C3F1A0D398900FD5A13 /* cJSON.c */,
+			);
+			path = cJSON;
+			sourceTree = "<group>";
+		};
+		9CE01C401A0D398900FD5A13 /* MurmurHash3 */ = {
+			isa = PBXGroup;
+			children = (
+				9CE01C411A0D398900FD5A13 /* MurmurHash3.c */,
+			);
+			path = MurmurHash3;
+			sourceTree = "<group>";
+		};
+		9CE01C421A0D398900FD5A13 /* public */ = {
+			isa = PBXGroup;
+			children = (
+				9CE01C431A0D398900FD5A13 /* cJSON.h */,
+				9CE01C441A0D398900FD5A13 /* MurmurHash3.h */,
+			);
+			path = public;
+			sourceTree = "<group>";
+		};
+		9CE01C471A0D399700FD5A13 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				9CE01C481A0D399700FD5A13 /* config */,
+				9CE01C4A1A0D399700FD5A13 /* file */,
+				9CE01C4E1A0D399700FD5A13 /* hashtable */,
+				9CE01C521A0D399700FD5A13 /* netasync */,
+				9CE01C541A0D399700FD5A13 /* poll */,
+				9CE01C561A0D399700FD5A13 /* poolworker */,
+				9CE01C581A0D399700FD5A13 /* public */,
+				9CE01C611A0D399700FD5A13 /* util */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		9CE01C481A0D399700FD5A13 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				9CE01C491A0D399700FD5A13 /* config.c */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		9CE01C4A1A0D399700FD5A13 /* file */ = {
+			isa = PBXGroup;
+			children = (
+				9CE01C4B1A0D399700FD5A13 /* file.c */,
+			);
+			path = file;
+			sourceTree = "<group>";
+		};
+		9CE01C4E1A0D399700FD5A13 /* hashtable */ = {
+			isa = PBXGroup;
+			children = (
+				9CE01C4F1A0D399700FD5A13 /* hashtable.c */,
+			);
+			path = hashtable;
+			sourceTree = "<group>";
+		};
+		9CE01C521A0D399700FD5A13 /* netasync */ = {
+			isa = PBXGroup;
+			children = (
+				9CE01C531A0D399700FD5A13 /* netasync.c */,
+			);
+			path = netasync;
+			sourceTree = "<group>";
+		};
+		9CE01C541A0D399700FD5A13 /* poll */ = {
+			isa = PBXGroup;
+			children = (
+				9CE01C551A0D399700FD5A13 /* poll.c */,
+			);
+			path = poll;
+			sourceTree = "<group>";
+		};
+		9CE01C561A0D399700FD5A13 /* poolworker */ = {
+			isa = PBXGroup;
+			children = (
+				9CE01C571A0D399700FD5A13 /* poolworker.c */,
+			);
+			path = poolworker;
+			sourceTree = "<group>";
+		};
+		9CE01C581A0D399700FD5A13 /* public */ = {
+			isa = PBXGroup;
+			children = (
+				9CE01C591A0D399700FD5A13 /* config.h */,
+				9CE01C5A1A0D399700FD5A13 /* file.h */,
+				9CE01C5B1A0D399700FD5A13 /* hashtable.h */,
+				9CE01C5C1A0D399700FD5A13 /* ip_info.h */,
+				9CE01C5D1A0D399700FD5A13 /* netasync.h */,
+				9CE01C5E1A0D399700FD5A13 /* poll.h */,
+				9CE01C5F1A0D399700FD5A13 /* poolworker.h */,
+				9CE01C601A0D399700FD5A13 /* util.h */,
+			);
+			path = public;
+			sourceTree = "<group>";
+		};
+		9CE01C611A0D399700FD5A13 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				9CE01C621A0D399700FD5A13 /* util.c */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		9CE01C6C1A0D39AB00FD5A13 /* public */ = {
+			isa = PBXGroup;
+			children = (
+				9CE01C6D1A0D39AB00FD5A13 /* atomic.h */,
+				9CE01C6E1A0D39AB00FD5A13 /* basic_defs.h */,
+				9CE01C6F1A0D39AB00FD5A13 /* bitc-defs.h */,
+				9CE01C701A0D39AB00FD5A13 /* bitc.h */,
+				9CE01C711A0D39AB00FD5A13 /* circlist.h */,
+				9CE01C721A0D39AB00FD5A13 /* fx.h */,
+			);
+			path = public;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,13 +337,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CE01C681A0D399700FD5A13 /* netasync.c in Sources */,
 				9C53A51C1A0A0BAD000A4511 /* DashboardController.m in Sources */,
+				9CE01C6A1A0D399700FD5A13 /* poolworker.c in Sources */,
 				9CD6200E1A0CBCFD0014E9D7 /* BlockDetailViewController.m in Sources */,
 				9C53A5161A0A0BAD000A4511 /* AppDelegate.m in Sources */,
 				9C53A5131A0A0BAD000A4511 /* main.m in Sources */,
 				9CE4B4F31A0AD41C005E878D /* BlockListController.m in Sources */,
+				9CE01C461A0D398900FD5A13 /* MurmurHash3.c in Sources */,
+				9CE01C451A0D398900FD5A13 /* cJSON.c in Sources */,
 				9C53A5411A0A1A5F000A4511 /* LogViewController.m in Sources */,
 				9C53A5441A0A1AC4000A4511 /* SettingsViewController.m in Sources */,
+				9CE01C641A0D399700FD5A13 /* file.c in Sources */,
+				9CE01C631A0D399700FD5A13 /* config.c in Sources */,
+				9CE01C691A0D399700FD5A13 /* poll.c in Sources */,
+				9CE01C661A0D399700FD5A13 /* hashtable.c in Sources */,
+				9CE01C6B1A0D399700FD5A13 /* util.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
