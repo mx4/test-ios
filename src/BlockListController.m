@@ -64,9 +64,7 @@
     NSLog(@"%s: %@", __FUNCTION__, [segue identifier]);
     
     if ([[segue identifier] isEqualToString:@"ShowBlockDetail"]) {
-        NSLog(@"Following ShowBlockDetail");
         BlockDetailViewController *detailViewController = [segue destinationViewController];
-        
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
         detailViewController.blockNumber = [ NSNumber numberWithInt: (int)indexPath.row];

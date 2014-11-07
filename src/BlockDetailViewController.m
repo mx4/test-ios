@@ -20,10 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSLog(@"%s: %@", __FUNCTION__, _blockNumber);
-
     UILabel *detailLabel = (UILabel*) [ self.view viewWithTag:12];
     detailLabel.text = [NSString stringWithFormat:@"Block %@", _blockNumber];
+    
+    NSLog(@"%s: %@", __FUNCTION__, _blockNumber);
 }
 
 - (void)didReceiveMemoryWarning {

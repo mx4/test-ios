@@ -85,8 +85,8 @@
 				9C53A5101A0A0BAD000A4511 /* Supporting Files */,
 			);
 			name = "bitc-ios";
-			path = SimpleTest;
-			sourceTree = "<group>";
+			path = "/Users/maxime/git/test-ios/src";
+			sourceTree = "<absolute>";
 		};
 		9C53A5101A0A0BAD000A4511 /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -272,7 +272,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = SimpleTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/src/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "bitc-ios";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -283,7 +283,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = SimpleTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/src/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "bitc-ios";
 				TARGETED_DEVICE_FAMILY = "1,2";
