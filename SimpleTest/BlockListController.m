@@ -50,6 +50,12 @@
     return NO;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *segueString = [ NSString stringWithFormat:@"ShowBlockDetail" ];
+    
+    [self performSegueWithIdentifier:segueString sender:self];
+}
+
 
 #pragma mark - Navigation
 
@@ -58,7 +64,7 @@
     NSLog(@"%s: %@", __FUNCTION__, [segue identifier]);
     
     if ([[segue identifier] isEqualToString:@"ShowBlockDetail"]) {
-        NSLog(@"Following ShowBlockDetails");
+        NSLog(@"Following ShowBlockDetail");
         BlockDetailViewController *detailViewController = [segue destinationViewController];
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];

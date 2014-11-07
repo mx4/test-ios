@@ -14,14 +14,16 @@
 
 @implementation BlockDetailViewController
 
-@synthesize blockNumber = _blockDNumber;
+@synthesize blockNumber = _blockNumber;
 @synthesize blockNumberLabel = _blockNumberLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.blockNumberLabel.text = [ NSString stringWithFormat:@"Test_%@", self.blockNumber];
-    NSLog(@"%s", __FUNCTION__);
+    NSLog(@"%s: %@", __FUNCTION__, _blockNumber);
+
+    UILabel *detailLabel = (UILabel*) [ self.view viewWithTag:12];
+    detailLabel.text = [NSString stringWithFormat:@"Block %@", _blockNumber];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,4 +31,3 @@
 }
 
 @end
-;
