@@ -24,6 +24,21 @@
 		9CE01C691A0D399700FD5A13 /* poll.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C551A0D399700FD5A13 /* poll.c */; };
 		9CE01C6A1A0D399700FD5A13 /* poolworker.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C571A0D399700FD5A13 /* poolworker.c */; };
 		9CE01C6B1A0D399700FD5A13 /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C621A0D399700FD5A13 /* util.c */; };
+		9CE01C931A0D3E1500FD5A13 /* addrbook.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C741A0D3E1500FD5A13 /* addrbook.c */; };
+		9CE01C941A0D3E1500FD5A13 /* base58.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C761A0D3E1500FD5A13 /* base58.c */; };
+		9CE01C951A0D3E1500FD5A13 /* block-store.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C781A0D3E1500FD5A13 /* block-store.c */; };
+		9CE01C961A0D3E1500FD5A13 /* bloom.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C7A1A0D3E1500FD5A13 /* bloom.c */; };
+		9CE01C971A0D3E1500FD5A13 /* btc-message.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C7C1A0D3E1500FD5A13 /* btc-message.c */; };
+		9CE01C981A0D3E1500FD5A13 /* crypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C7F1A0D3E1500FD5A13 /* crypt.c */; };
+		9CE01C991A0D3E1500FD5A13 /* hash.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C811A0D3E1500FD5A13 /* hash.c */; };
+		9CE01C9A1A0D3E1500FD5A13 /* key.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C831A0D3E1500FD5A13 /* key.c */; };
+		9CE01C9B1A0D3E1500FD5A13 /* peer.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C851A0D3E1500FD5A13 /* peer.c */; };
+		9CE01C9C1A0D3E1500FD5A13 /* peergroup.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C871A0D3E1500FD5A13 /* peergroup.c */; };
+		9CE01C9D1A0D3E1500FD5A13 /* rpc.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C891A0D3E1500FD5A13 /* rpc.c */; };
+		9CE01C9E1A0D3E1500FD5A13 /* script.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C8B1A0D3E1500FD5A13 /* script.c */; };
+		9CE01C9F1A0D3E1500FD5A13 /* serialize.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C8D1A0D3E1500FD5A13 /* serialize.c */; };
+		9CE01CA01A0D3E1500FD5A13 /* txdb.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C8F1A0D3E1500FD5A13 /* txdb.c */; };
+		9CE01CA11A0D3E1500FD5A13 /* wallet.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C911A0D3E1500FD5A13 /* wallet.c */; };
 		9CE4B4F31A0AD41C005E878D /* BlockListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4B4F21A0AD41C005E878D /* BlockListController.m */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +83,37 @@
 		9CE01C701A0D39AB00FD5A13 /* bitc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitc.h; sourceTree = "<group>"; };
 		9CE01C711A0D39AB00FD5A13 /* circlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circlist.h; sourceTree = "<group>"; };
 		9CE01C721A0D39AB00FD5A13 /* fx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fx.h; sourceTree = "<group>"; };
+		9CE01C741A0D3E1500FD5A13 /* addrbook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = addrbook.c; sourceTree = "<group>"; };
+		9CE01C751A0D3E1500FD5A13 /* addrbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addrbook.h; sourceTree = "<group>"; };
+		9CE01C761A0D3E1500FD5A13 /* base58.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base58.c; sourceTree = "<group>"; };
+		9CE01C771A0D3E1500FD5A13 /* base58.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base58.h; sourceTree = "<group>"; };
+		9CE01C781A0D3E1500FD5A13 /* block-store.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "block-store.c"; sourceTree = "<group>"; };
+		9CE01C791A0D3E1500FD5A13 /* block-store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "block-store.h"; sourceTree = "<group>"; };
+		9CE01C7A1A0D3E1500FD5A13 /* bloom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bloom.c; sourceTree = "<group>"; };
+		9CE01C7B1A0D3E1500FD5A13 /* bloom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bloom.h; sourceTree = "<group>"; };
+		9CE01C7C1A0D3E1500FD5A13 /* btc-message.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "btc-message.c"; sourceTree = "<group>"; };
+		9CE01C7D1A0D3E1500FD5A13 /* btc-message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "btc-message.h"; sourceTree = "<group>"; };
+		9CE01C7E1A0D3E1500FD5A13 /* buff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buff.h; sourceTree = "<group>"; };
+		9CE01C7F1A0D3E1500FD5A13 /* crypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crypt.c; sourceTree = "<group>"; };
+		9CE01C801A0D3E1500FD5A13 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		9CE01C811A0D3E1500FD5A13 /* hash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hash.c; sourceTree = "<group>"; };
+		9CE01C821A0D3E1500FD5A13 /* hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hash.h; sourceTree = "<group>"; };
+		9CE01C831A0D3E1500FD5A13 /* key.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = key.c; sourceTree = "<group>"; };
+		9CE01C841A0D3E1500FD5A13 /* key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = key.h; sourceTree = "<group>"; };
+		9CE01C851A0D3E1500FD5A13 /* peer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = peer.c; sourceTree = "<group>"; };
+		9CE01C861A0D3E1500FD5A13 /* peer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = peer.h; sourceTree = "<group>"; };
+		9CE01C871A0D3E1500FD5A13 /* peergroup.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = peergroup.c; sourceTree = "<group>"; };
+		9CE01C881A0D3E1500FD5A13 /* peergroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = peergroup.h; sourceTree = "<group>"; };
+		9CE01C891A0D3E1500FD5A13 /* rpc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rpc.c; sourceTree = "<group>"; };
+		9CE01C8A1A0D3E1500FD5A13 /* rpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rpc.h; sourceTree = "<group>"; };
+		9CE01C8B1A0D3E1500FD5A13 /* script.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = script.c; sourceTree = "<group>"; };
+		9CE01C8C1A0D3E1500FD5A13 /* script.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = script.h; sourceTree = "<group>"; };
+		9CE01C8D1A0D3E1500FD5A13 /* serialize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = serialize.c; sourceTree = "<group>"; };
+		9CE01C8E1A0D3E1500FD5A13 /* serialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = serialize.h; sourceTree = "<group>"; };
+		9CE01C8F1A0D3E1500FD5A13 /* txdb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = txdb.c; sourceTree = "<group>"; };
+		9CE01C901A0D3E1500FD5A13 /* txdb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = txdb.h; sourceTree = "<group>"; };
+		9CE01C911A0D3E1500FD5A13 /* wallet.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wallet.c; sourceTree = "<group>"; };
+		9CE01C921A0D3E1500FD5A13 /* wallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wallet.h; sourceTree = "<group>"; };
 		9CE4B4F11A0AD41C005E878D /* BlockListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockListController.h; sourceTree = "<group>"; };
 		9CE4B4F21A0AD41C005E878D /* BlockListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockListController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +132,7 @@
 		9C53A5041A0A0BAD000A4511 = {
 			isa = PBXGroup;
 			children = (
+				9CE01C731A0D3E1500FD5A13 /* core */,
 				9CE01C6C1A0D39AB00FD5A13 /* public */,
 				9CE01C471A0D399700FD5A13 /* lib */,
 				9CE01C3D1A0D398900FD5A13 /* ext */,
@@ -268,6 +315,44 @@
 			path = public;
 			sourceTree = "<group>";
 		};
+		9CE01C731A0D3E1500FD5A13 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				9CE01C741A0D3E1500FD5A13 /* addrbook.c */,
+				9CE01C751A0D3E1500FD5A13 /* addrbook.h */,
+				9CE01C761A0D3E1500FD5A13 /* base58.c */,
+				9CE01C771A0D3E1500FD5A13 /* base58.h */,
+				9CE01C781A0D3E1500FD5A13 /* block-store.c */,
+				9CE01C791A0D3E1500FD5A13 /* block-store.h */,
+				9CE01C7A1A0D3E1500FD5A13 /* bloom.c */,
+				9CE01C7B1A0D3E1500FD5A13 /* bloom.h */,
+				9CE01C7C1A0D3E1500FD5A13 /* btc-message.c */,
+				9CE01C7D1A0D3E1500FD5A13 /* btc-message.h */,
+				9CE01C7E1A0D3E1500FD5A13 /* buff.h */,
+				9CE01C7F1A0D3E1500FD5A13 /* crypt.c */,
+				9CE01C801A0D3E1500FD5A13 /* crypt.h */,
+				9CE01C811A0D3E1500FD5A13 /* hash.c */,
+				9CE01C821A0D3E1500FD5A13 /* hash.h */,
+				9CE01C831A0D3E1500FD5A13 /* key.c */,
+				9CE01C841A0D3E1500FD5A13 /* key.h */,
+				9CE01C851A0D3E1500FD5A13 /* peer.c */,
+				9CE01C861A0D3E1500FD5A13 /* peer.h */,
+				9CE01C871A0D3E1500FD5A13 /* peergroup.c */,
+				9CE01C881A0D3E1500FD5A13 /* peergroup.h */,
+				9CE01C891A0D3E1500FD5A13 /* rpc.c */,
+				9CE01C8A1A0D3E1500FD5A13 /* rpc.h */,
+				9CE01C8B1A0D3E1500FD5A13 /* script.c */,
+				9CE01C8C1A0D3E1500FD5A13 /* script.h */,
+				9CE01C8D1A0D3E1500FD5A13 /* serialize.c */,
+				9CE01C8E1A0D3E1500FD5A13 /* serialize.h */,
+				9CE01C8F1A0D3E1500FD5A13 /* txdb.c */,
+				9CE01C901A0D3E1500FD5A13 /* txdb.h */,
+				9CE01C911A0D3E1500FD5A13 /* wallet.c */,
+				9CE01C921A0D3E1500FD5A13 /* wallet.h */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -337,21 +422,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CE01C9B1A0D3E1500FD5A13 /* peer.c in Sources */,
+				9CE01C991A0D3E1500FD5A13 /* hash.c in Sources */,
 				9CE01C681A0D399700FD5A13 /* netasync.c in Sources */,
+				9CE01C971A0D3E1500FD5A13 /* btc-message.c in Sources */,
+				9CE01C961A0D3E1500FD5A13 /* bloom.c in Sources */,
+				9CE01CA01A0D3E1500FD5A13 /* txdb.c in Sources */,
 				9C53A51C1A0A0BAD000A4511 /* DashboardController.m in Sources */,
 				9CE01C6A1A0D399700FD5A13 /* poolworker.c in Sources */,
+				9CE01C951A0D3E1500FD5A13 /* block-store.c in Sources */,
 				9CD6200E1A0CBCFD0014E9D7 /* BlockDetailViewController.m in Sources */,
 				9C53A5161A0A0BAD000A4511 /* AppDelegate.m in Sources */,
+				9CE01C941A0D3E1500FD5A13 /* base58.c in Sources */,
 				9C53A5131A0A0BAD000A4511 /* main.m in Sources */,
 				9CE4B4F31A0AD41C005E878D /* BlockListController.m in Sources */,
 				9CE01C461A0D398900FD5A13 /* MurmurHash3.c in Sources */,
+				9CE01C9E1A0D3E1500FD5A13 /* script.c in Sources */,
 				9CE01C451A0D398900FD5A13 /* cJSON.c in Sources */,
+				9CE01C9D1A0D3E1500FD5A13 /* rpc.c in Sources */,
 				9C53A5411A0A1A5F000A4511 /* LogViewController.m in Sources */,
+				9CE01C9A1A0D3E1500FD5A13 /* key.c in Sources */,
 				9C53A5441A0A1AC4000A4511 /* SettingsViewController.m in Sources */,
+				9CE01C9F1A0D3E1500FD5A13 /* serialize.c in Sources */,
+				9CE01CA11A0D3E1500FD5A13 /* wallet.c in Sources */,
+				9CE01C931A0D3E1500FD5A13 /* addrbook.c in Sources */,
+				9CE01C9C1A0D3E1500FD5A13 /* peergroup.c in Sources */,
 				9CE01C641A0D399700FD5A13 /* file.c in Sources */,
 				9CE01C631A0D399700FD5A13 /* config.c in Sources */,
 				9CE01C691A0D399700FD5A13 /* poll.c in Sources */,
 				9CE01C661A0D399700FD5A13 /* hashtable.c in Sources */,
+				9CE01C981A0D3E1500FD5A13 /* crypt.c in Sources */,
 				9CE01C6B1A0D399700FD5A13 /* util.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
