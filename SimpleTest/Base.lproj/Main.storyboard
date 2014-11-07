@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" text="Dashboard" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="221" y="28" width="158" height="42"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Dashboard" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
+                                <rect key="frame" x="228" y="31" width="144.5" height="36"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" label="Dashboard"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -38,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-242" y="-528"/>
+            <point key="canvasLocation" x="-810" y="-540"/>
         </scene>
         <!--List of Blocks-->
         <scene sceneID="9rJ-P0-P7j">
@@ -70,13 +70,11 @@
                             <outlet property="delegate" destination="2tH-Pg-HhO" id="X1I-7h-SYE"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="BlockList" id="a6w-Z4-VJE">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-18"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="Recent Blocks" id="WJu-pe-iJW"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZX2-J7-Nh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-242" y="128"/>
+            <point key="canvasLocation" x="2" y="156"/>
         </scene>
         <!--Logs-->
         <scene sceneID="gYZ-WG-fsf">
@@ -102,41 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3tR-vG-2fi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1326" y="1345"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="8zA-sr-eSQ">
-            <objects>
-                <viewController id="pJ3-Se-naE" customClass="SettingsViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="WAk-Rl-jel"/>
-                        <viewControllerLayoutGuide type="bottom" id="lfd-oM-wVi"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qy0-Kq-qf7">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nK-PG-Ov1">
-                                <rect key="frame" x="243" y="40" width="114" height="61"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerY" secondItem="9nK-PG-Ov1" secondAttribute="centerY" id="T0r-Wz-bpV"/>
-                            <constraint firstAttribute="centerX" secondItem="9nK-PG-Ov1" secondAttribute="centerX" id="TcH-xK-iCR"/>
-                            <constraint firstItem="9nK-PG-Ov1" firstAttribute="top" secondItem="WAk-Rl-jel" secondAttribute="bottom" id="glh-H5-eqC"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="sG3-MJ-oag">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-18"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gHp-5d-a1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2092" y="1854"/>
+            <point key="canvasLocation" x="-810" y="973"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -150,14 +114,34 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="AmT-KE-FKc"/>
-                        <segue destination="2tH-Pg-HhO" kind="relationship" relationship="viewControllers" id="v4n-tm-Ona"/>
+                        <segue destination="4bm-zH-rgY" kind="relationship" relationship="viewControllers" id="v4n-tm-Ona"/>
                         <segue destination="O0N-5l-JgB" kind="relationship" relationship="viewControllers" id="ZWa-yw-BuE"/>
-                        <segue destination="pJ3-Se-naE" kind="relationship" relationship="viewControllers" id="izz-aD-Qe7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1884" y="80"/>
+        </scene>
+        <!--BlockList-->
+        <scene sceneID="vLC-ZK-NCf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4bm-zH-rgY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="BlockList" id="a6w-Z4-VJE">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-18"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ml6-Ex-CX4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2tH-Pg-HhO" kind="relationship" relationship="rootViewController" id="27b-Lb-yfy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rVV-Dl-5nB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-810" y="156"/>
         </scene>
     </scenes>
 </document>
