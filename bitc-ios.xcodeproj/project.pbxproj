@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9C53A50D1A0A0BAD000A4511 /* SimpleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C53A50D1A0A0BAD000A4511 /* bitc-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bitc-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C53A5111A0A0BAD000A4511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C53A5121A0A0BAD000A4511 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9C53A5141A0A0BAD000A4511 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 		9C53A5041A0A0BAD000A4511 = {
 			isa = PBXGroup;
 			children = (
-				9C53A50F1A0A0BAD000A4511 /* SimpleTest */,
+				9C53A50F1A0A0BAD000A4511 /* bitc-ios */,
 				9C53A50E1A0A0BAD000A4511 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,12 +57,12 @@
 		9C53A50E1A0A0BAD000A4511 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9C53A50D1A0A0BAD000A4511 /* SimpleTest.app */,
+				9C53A50D1A0A0BAD000A4511 /* bitc-ios.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9C53A50F1A0A0BAD000A4511 /* SimpleTest */ = {
+		9C53A50F1A0A0BAD000A4511 /* bitc-ios */ = {
 			isa = PBXGroup;
 			children = (
 				9C53A5141A0A0BAD000A4511 /* AppDelegate.h */,
@@ -79,6 +79,7 @@
 				9C53A5201A0A0BAD000A4511 /* Images.xcassets */,
 				9C53A5101A0A0BAD000A4511 /* Supporting Files */,
 			);
+			name = "bitc-ios";
 			path = SimpleTest;
 			sourceTree = "<group>";
 		};
@@ -94,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9C53A50C1A0A0BAD000A4511 /* SimpleTest */ = {
+		9C53A50C1A0A0BAD000A4511 /* bitc-ios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C53A5331A0A0BAE000A4511 /* Build configuration list for PBXNativeTarget "SimpleTest" */;
+			buildConfigurationList = 9C53A5331A0A0BAE000A4511 /* Build configuration list for PBXNativeTarget "bitc-ios" */;
 			buildPhases = (
 				9C53A5091A0A0BAD000A4511 /* Sources */,
 				9C53A50A1A0A0BAD000A4511 /* Frameworks */,
@@ -106,9 +107,9 @@
 			);
 			dependencies = (
 			);
-			name = SimpleTest;
+			name = "bitc-ios";
 			productName = SimpleTest;
-			productReference = 9C53A50D1A0A0BAD000A4511 /* SimpleTest.app */;
+			productReference = 9C53A50D1A0A0BAD000A4511 /* bitc-ios.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -125,7 +126,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9C53A5081A0A0BAD000A4511 /* Build configuration list for PBXProject "SimpleTest" */;
+			buildConfigurationList = 9C53A5081A0A0BAD000A4511 /* Build configuration list for PBXProject "bitc-ios" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -138,7 +139,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9C53A50C1A0A0BAD000A4511 /* SimpleTest */,
+				9C53A50C1A0A0BAD000A4511 /* bitc-ios */,
 			);
 		};
 /* End PBXProject section */
@@ -267,7 +268,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SimpleTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "bitc-ios";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -278,7 +279,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SimpleTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "bitc-ios";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -286,7 +287,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9C53A5081A0A0BAD000A4511 /* Build configuration list for PBXProject "SimpleTest" */ = {
+		9C53A5081A0A0BAD000A4511 /* Build configuration list for PBXProject "bitc-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C53A5311A0A0BAE000A4511 /* Debug */,
@@ -295,7 +296,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C53A5331A0A0BAE000A4511 /* Build configuration list for PBXNativeTarget "SimpleTest" */ = {
+		9C53A5331A0A0BAE000A4511 /* Build configuration list for PBXNativeTarget "bitc-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C53A5341A0A0BAE000A4511 /* Debug */,

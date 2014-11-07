@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9C53A50C1A0A0BAD000A4511"
-               BuildableName = "SimpleTest.app"
-               BlueprintName = "SimpleTest"
-               ReferencedContainer = "container:SimpleTest.xcodeproj">
+               BuildableName = "bitc-ios.app"
+               BlueprintName = "bitc-ios"
+               ReferencedContainer = "container:bitc-ios.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "9C53A5281A0A0BAE000A4511"
                BuildableName = "SimpleTestTests.xctest"
                BlueprintName = "SimpleTestTests"
-               ReferencedContainer = "container:SimpleTest.xcodeproj">
+               ReferencedContainer = "container:bitc-ios.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -49,7 +49,7 @@
                BlueprintIdentifier = "9C53A5281A0A0BAE000A4511"
                BuildableName = "SimpleTestTests.xctest"
                BlueprintName = "SimpleTestTests"
-               ReferencedContainer = "container:SimpleTest.xcodeproj">
+               ReferencedContainer = "container:bitc-ios.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9C53A50C1A0A0BAD000A4511"
-            BuildableName = "SimpleTest.app"
-            BlueprintName = "SimpleTest"
-            ReferencedContainer = "container:SimpleTest.xcodeproj">
+            BuildableName = "bitc-ios.app"
+            BlueprintName = "bitc-ios"
+            ReferencedContainer = "container:bitc-ios.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9C53A50C1A0A0BAD000A4511"
-            BuildableName = "SimpleTest.app"
-            BlueprintName = "SimpleTest"
-            ReferencedContainer = "container:SimpleTest.xcodeproj">
+            BuildableName = "bitc-ios.app"
+            BlueprintName = "bitc-ios"
+            ReferencedContainer = "container:bitc-ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9C53A50C1A0A0BAD000A4511"
-            BuildableName = "SimpleTest.app"
-            BlueprintName = "SimpleTest"
-            ReferencedContainer = "container:SimpleTest.xcodeproj">
+            BuildableName = "bitc-ios.app"
+            BlueprintName = "bitc-ios"
+            ReferencedContainer = "container:bitc-ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
