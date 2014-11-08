@@ -52,7 +52,6 @@
 		9C2739B51A0E6D3600ACAB53 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../../src/openssl-1.0.1j-iOS/lib/libcrypto.a"; sourceTree = "<group>"; };
 		9C2739B61A0E6D3600ACAB53 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "../../src/openssl-1.0.1j-iOS/lib/libssl.a"; sourceTree = "<group>"; };
 		9C2739B91A0E7EC400ACAB53 /* libleveldb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleveldb.a; path = ../leveldb/libleveldb.a; sourceTree = "<group>"; };
-		9C2739BB1A0E812800ACAB53 /* libleveldb.dylib.1.18 */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libleveldb.dylib.1.18; path = ../leveldb/libleveldb.dylib.1.18; sourceTree = "<group>"; };
 		9C2739BE1A0EC20000ACAB53 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		9C2739C01A0ED97900ACAB53 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = app/main.c; sourceTree = "<group>"; };
 		9C2739C21A0EDAE800ACAB53 /* bitc_ui.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = bitc_ui.c; path = app/bitc_ui.c; sourceTree = "<group>"; };
@@ -147,17 +146,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9C53A5041A0A0BAD000A4511 = {
+		9C2739C51A0EDCD000ACAB53 /* app */ = {
 			isa = PBXGroup;
 			children = (
 				9C2739C21A0EDAE800ACAB53 /* bitc_ui.c */,
 				9C2739C31A0EDAE800ACAB53 /* bitc_ui.h */,
 				9C2739C01A0ED97900ACAB53 /* main.c */,
+			);
+			name = app;
+			sourceTree = "<group>";
+		};
+		9C53A5041A0A0BAD000A4511 = {
+			isa = PBXGroup;
+			children = (
 				9C2739BE1A0EC20000ACAB53 /* libc++.dylib */,
-				9C2739BB1A0E812800ACAB53 /* libleveldb.dylib.1.18 */,
 				9C2739B91A0E7EC400ACAB53 /* libleveldb.a */,
 				9C2739B51A0E6D3600ACAB53 /* libcrypto.a */,
 				9C2739B61A0E6D3600ACAB53 /* libssl.a */,
+				9C2739C51A0EDCD000ACAB53 /* app */,
 				9CE01C731A0D3E1500FD5A13 /* core */,
 				9CE01C6C1A0D39AB00FD5A13 /* public */,
 				9CE01C471A0D399700FD5A13 /* lib */,

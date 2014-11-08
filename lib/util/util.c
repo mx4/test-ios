@@ -306,6 +306,7 @@ LogPrintf(bool warning,
    vsnprintf(msg, sizeof msg, format, args);
 
    snprintf(logLine, sizeof logLine, "%s| %s%s", tsPfx, msgPfx, msg);
+      
    if (logState.logCB) {
       logState.logCB(tsPfx, msg, logState.logCBData);
       mutex_lock(logState.lock);
