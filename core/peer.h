@@ -2,11 +2,11 @@
 #define __PEER_H__
 
 #include "basic_defs.h"
-#include "bitc_ui.h"
 
 struct peer_addr;
 struct circlist_item;
 struct peer;
+struct bitcui_peer;
 
 const char *peer_name(const struct peer *peer);
 const char *peer_name_li(struct circlist_item *li);

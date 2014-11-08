@@ -12,6 +12,10 @@
 	<dict>
 		<key>2B3C8BFF9D6F179F23AC3948C0DEA518BF48267B</key>
 		<string>https://github.com/mx4/test-ios</string>
+		<key>BDF394AD00F0672C031FDA5A297CD80086AC8A54</key>
+		<string>https://github.com/google/leveldb</string>
+		<key>D482924C5AFED88D3216BDD72C2302DD55AD6268</key>
+		<string>https://github.com/sqlcipher/openssl-xcode</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>bitc-ios.xcodeproj</string>
@@ -19,6 +23,10 @@
 	<dict>
 		<key>2B3C8BFF9D6F179F23AC3948C0DEA518BF48267B</key>
 		<string>../..</string>
+		<key>BDF394AD00F0672C031FDA5A297CD80086AC8A54</key>
+		<string>../../../leveldb</string>
+		<key>D482924C5AFED88D3216BDD72C2302DD55AD6268</key>
+		<string>../../../openssl-xcode</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/mx4/test-ios</string>
@@ -28,6 +36,22 @@
 	<string>2B3C8BFF9D6F179F23AC3948C0DEA518BF48267B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BDF394AD00F0672C031FDA5A297CD80086AC8A54</string>
+			<key>IDESourceControlWCCName</key>
+			<string>leveldb</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D482924C5AFED88D3216BDD72C2302DD55AD6268</string>
+			<key>IDESourceControlWCCName</key>
+			<string>openssl-xcode</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

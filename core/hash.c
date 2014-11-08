@@ -4,6 +4,7 @@
 #ifdef __APPLE__
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 #endif
+
 #include <openssl/evp.h>
 #include <openssl/ripemd.h>
 

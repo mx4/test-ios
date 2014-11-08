@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C2739B71A0E6D3600ACAB53 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2739B51A0E6D3600ACAB53 /* libcrypto.a */; };
+		9C2739B81A0E6D3600ACAB53 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2739B61A0E6D3600ACAB53 /* libssl.a */; };
+		9C2739BA1A0E7EC400ACAB53 /* libleveldb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2739B91A0E7EC400ACAB53 /* libleveldb.a */; };
 		9C53A5131A0A0BAD000A4511 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A5121A0A0BAD000A4511 /* main.m */; };
 		9C53A5161A0A0BAD000A4511 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A5151A0A0BAD000A4511 /* AppDelegate.m */; };
 		9C53A51C1A0A0BAD000A4511 /* DashboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A51B1A0A0BAD000A4511 /* DashboardController.m */; };
@@ -43,6 +46,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C2739B51A0E6D3600ACAB53 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../../src/openssl-1.0.1j-iOS/lib/libcrypto.a"; sourceTree = "<group>"; };
+		9C2739B61A0E6D3600ACAB53 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "../../src/openssl-1.0.1j-iOS/lib/libssl.a"; sourceTree = "<group>"; };
+		9C2739B91A0E7EC400ACAB53 /* libleveldb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleveldb.a; path = ../leveldb/libleveldb.a; sourceTree = "<group>"; };
 		9C53A50D1A0A0BAD000A4511 /* bitc-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bitc-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C53A5111A0A0BAD000A4511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C53A5121A0A0BAD000A4511 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -123,6 +129,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C2739BA1A0E7EC400ACAB53 /* libleveldb.a in Frameworks */,
+				9C2739B71A0E6D3600ACAB53 /* libcrypto.a in Frameworks */,
+				9C2739B81A0E6D3600ACAB53 /* libssl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +141,9 @@
 		9C53A5041A0A0BAD000A4511 = {
 			isa = PBXGroup;
 			children = (
+				9C2739B91A0E7EC400ACAB53 /* libleveldb.a */,
+				9C2739B51A0E6D3600ACAB53 /* libcrypto.a */,
+				9C2739B61A0E6D3600ACAB53 /* libssl.a */,
 				9CE01C731A0D3E1500FD5A13 /* core */,
 				9CE01C6C1A0D39AB00FD5A13 /* public */,
 				9CE01C471A0D399700FD5A13 /* lib */,
@@ -422,37 +434,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CE01C9B1A0D3E1500FD5A13 /* peer.c in Sources */,
+				9CE4B4F31A0AD41C005E878D /* BlockListController.m in Sources */,
+				9C53A5161A0A0BAD000A4511 /* AppDelegate.m in Sources */,
+				9CD6200E1A0CBCFD0014E9D7 /* BlockDetailViewController.m in Sources */,
+				9C53A51C1A0A0BAD000A4511 /* DashboardController.m in Sources */,
+				9C53A5411A0A1A5F000A4511 /* LogViewController.m in Sources */,
+				9C53A5441A0A1AC4000A4511 /* SettingsViewController.m in Sources */,
+				9CE01C6B1A0D399700FD5A13 /* util.c in Sources */,
+				9C53A5131A0A0BAD000A4511 /* main.m in Sources */,
+				9CE01C9A1A0D3E1500FD5A13 /* key.c in Sources */,
+				9CE01C661A0D399700FD5A13 /* hashtable.c in Sources */,
+				9CE01C9F1A0D3E1500FD5A13 /* serialize.c in Sources */,
+				9CE01C981A0D3E1500FD5A13 /* crypt.c in Sources */,
+				9CE01C461A0D398900FD5A13 /* MurmurHash3.c in Sources */,
+				9CE01C691A0D399700FD5A13 /* poll.c in Sources */,
+				9CE01C631A0D399700FD5A13 /* config.c in Sources */,
+				9CE01C451A0D398900FD5A13 /* cJSON.c in Sources */,
 				9CE01C991A0D3E1500FD5A13 /* hash.c in Sources */,
+				9CE01C641A0D399700FD5A13 /* file.c in Sources */,
 				9CE01C681A0D399700FD5A13 /* netasync.c in Sources */,
 				9CE01C971A0D3E1500FD5A13 /* btc-message.c in Sources */,
 				9CE01C961A0D3E1500FD5A13 /* bloom.c in Sources */,
-				9CE01CA01A0D3E1500FD5A13 /* txdb.c in Sources */,
-				9C53A51C1A0A0BAD000A4511 /* DashboardController.m in Sources */,
 				9CE01C6A1A0D399700FD5A13 /* poolworker.c in Sources */,
-				9CE01C951A0D3E1500FD5A13 /* block-store.c in Sources */,
-				9CD6200E1A0CBCFD0014E9D7 /* BlockDetailViewController.m in Sources */,
-				9C53A5161A0A0BAD000A4511 /* AppDelegate.m in Sources */,
 				9CE01C941A0D3E1500FD5A13 /* base58.c in Sources */,
-				9C53A5131A0A0BAD000A4511 /* main.m in Sources */,
-				9CE4B4F31A0AD41C005E878D /* BlockListController.m in Sources */,
-				9CE01C461A0D398900FD5A13 /* MurmurHash3.c in Sources */,
 				9CE01C9E1A0D3E1500FD5A13 /* script.c in Sources */,
-				9CE01C451A0D398900FD5A13 /* cJSON.c in Sources */,
 				9CE01C9D1A0D3E1500FD5A13 /* rpc.c in Sources */,
-				9C53A5411A0A1A5F000A4511 /* LogViewController.m in Sources */,
-				9CE01C9A1A0D3E1500FD5A13 /* key.c in Sources */,
-				9C53A5441A0A1AC4000A4511 /* SettingsViewController.m in Sources */,
-				9CE01C9F1A0D3E1500FD5A13 /* serialize.c in Sources */,
-				9CE01CA11A0D3E1500FD5A13 /* wallet.c in Sources */,
 				9CE01C931A0D3E1500FD5A13 /* addrbook.c in Sources */,
+				9CE01C951A0D3E1500FD5A13 /* block-store.c in Sources */,
+				9CE01CA11A0D3E1500FD5A13 /* wallet.c in Sources */,
 				9CE01C9C1A0D3E1500FD5A13 /* peergroup.c in Sources */,
-				9CE01C641A0D399700FD5A13 /* file.c in Sources */,
-				9CE01C631A0D399700FD5A13 /* config.c in Sources */,
-				9CE01C691A0D399700FD5A13 /* poll.c in Sources */,
-				9CE01C661A0D399700FD5A13 /* hashtable.c in Sources */,
-				9CE01C981A0D3E1500FD5A13 /* crypt.c in Sources */,
-				9CE01C6B1A0D399700FD5A13 /* util.c in Sources */,
+				9CE01CA01A0D3E1500FD5A13 /* txdb.c in Sources */,
+				9CE01C9B1A0D3E1500FD5A13 /* peer.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,10 +564,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					/Users/maxime/git/leveldb/include,
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"/Users/maxime/git/test-ios/public",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/maxime/src/openssl-1.0.1j-iOS/lib",
+					/Users/maxime/git/leveldb,
+				);
 				PRODUCT_NAME = "bitc-ios";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/Users/maxime/src/openssl-1.0.1j-iOS/include";
 			};
 			name = Debug;
 		};
@@ -563,10 +586,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"HEADER_SEARCH_PATHS[arch=*]" = /Users/maxime/git/leveldb/include;
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/maxime/src/openssl-1.0.1j-iOS/lib",
+					/Users/maxime/git/leveldb,
+				);
 				PRODUCT_NAME = "bitc-ios";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/Users/maxime/src/openssl-1.0.1j-iOS/include";
 			};
 			name = Release;
 		};
