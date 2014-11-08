@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		9C2739B71A0E6D3600ACAB53 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2739B51A0E6D3600ACAB53 /* libcrypto.a */; };
 		9C2739B81A0E6D3600ACAB53 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2739B61A0E6D3600ACAB53 /* libssl.a */; };
-		9C2739BA1A0E7EC400ACAB53 /* libleveldb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2739B91A0E7EC400ACAB53 /* libleveldb.a */; };
+		9C2739BD1A0E82DF00ACAB53 /* libleveldb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2739B91A0E7EC400ACAB53 /* libleveldb.a */; };
+		9C2739BF1A0EC20000ACAB53 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2739BE1A0EC20000ACAB53 /* libc++.dylib */; };
 		9C53A5131A0A0BAD000A4511 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A5121A0A0BAD000A4511 /* main.m */; };
 		9C53A5161A0A0BAD000A4511 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A5151A0A0BAD000A4511 /* AppDelegate.m */; };
 		9C53A51C1A0A0BAD000A4511 /* DashboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A51B1A0A0BAD000A4511 /* DashboardController.m */; };
@@ -49,6 +50,8 @@
 		9C2739B51A0E6D3600ACAB53 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../../src/openssl-1.0.1j-iOS/lib/libcrypto.a"; sourceTree = "<group>"; };
 		9C2739B61A0E6D3600ACAB53 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "../../src/openssl-1.0.1j-iOS/lib/libssl.a"; sourceTree = "<group>"; };
 		9C2739B91A0E7EC400ACAB53 /* libleveldb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleveldb.a; path = ../leveldb/libleveldb.a; sourceTree = "<group>"; };
+		9C2739BB1A0E812800ACAB53 /* libleveldb.dylib.1.18 */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libleveldb.dylib.1.18; path = ../leveldb/libleveldb.dylib.1.18; sourceTree = "<group>"; };
+		9C2739BE1A0EC20000ACAB53 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		9C53A50D1A0A0BAD000A4511 /* bitc-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bitc-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C53A5111A0A0BAD000A4511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C53A5121A0A0BAD000A4511 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -129,7 +132,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C2739BA1A0E7EC400ACAB53 /* libleveldb.a in Frameworks */,
+				9C2739BF1A0EC20000ACAB53 /* libc++.dylib in Frameworks */,
+				9C2739BD1A0E82DF00ACAB53 /* libleveldb.a in Frameworks */,
 				9C2739B71A0E6D3600ACAB53 /* libcrypto.a in Frameworks */,
 				9C2739B81A0E6D3600ACAB53 /* libssl.a in Frameworks */,
 			);
@@ -141,6 +145,8 @@
 		9C53A5041A0A0BAD000A4511 = {
 			isa = PBXGroup;
 			children = (
+				9C2739BE1A0EC20000ACAB53 /* libc++.dylib */,
+				9C2739BB1A0E812800ACAB53 /* libleveldb.dylib.1.18 */,
 				9C2739B91A0E7EC400ACAB53 /* libleveldb.a */,
 				9C2739B51A0E6D3600ACAB53 /* libcrypto.a */,
 				9C2739B61A0E6D3600ACAB53 /* libssl.a */,

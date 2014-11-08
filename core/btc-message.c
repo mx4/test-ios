@@ -595,8 +595,8 @@ btcmsg_parse_merkleblock(struct buff          *buf,
 
    if (!btcmsg_verify_merkle_tree(blk)) {
       Warning("Failed to verify merkle branch!\n");
-      ASSERT(0);
       res = 1;
+      ASSERT(0);
       goto error;
    }
 
