@@ -11,7 +11,6 @@
 		9C2739B81A0E6D3600ACAB53 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2739B61A0E6D3600ACAB53 /* libssl.a */; };
 		9C2739BD1A0E82DF00ACAB53 /* libleveldb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2739B91A0E7EC400ACAB53 /* libleveldb.a */; };
 		9C2739BF1A0EC20000ACAB53 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2739BE1A0EC20000ACAB53 /* libc++.dylib */; };
-		9C2739C11A0ED97900ACAB53 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 9C2739C01A0ED97900ACAB53 /* main.c */; };
 		9C2739C41A0EDAE800ACAB53 /* bitc_ui.c in Sources */ = {isa = PBXBuildFile; fileRef = 9C2739C21A0EDAE800ACAB53 /* bitc_ui.c */; };
 		9C53A5131A0A0BAD000A4511 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A5121A0A0BAD000A4511 /* main.m */; };
 		9C53A5161A0A0BAD000A4511 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A5151A0A0BAD000A4511 /* AppDelegate.m */; };
@@ -21,6 +20,7 @@
 		9C53A5411A0A1A5F000A4511 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A5401A0A1A5F000A4511 /* LogViewController.m */; };
 		9C53A5441A0A1AC4000A4511 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A5431A0A1AC4000A4511 /* SettingsViewController.m */; };
 		9CD6200E1A0CBCFD0014E9D7 /* BlockDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6200D1A0CBCFD0014E9D7 /* BlockDetailViewController.m */; };
+		9CDCFBCB1A0EE2BB002E2810 /* app.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CDCFBCA1A0EE2BB002E2810 /* app.c */; };
 		9CE01C451A0D398900FD5A13 /* cJSON.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C3F1A0D398900FD5A13 /* cJSON.c */; };
 		9CE01C461A0D398900FD5A13 /* MurmurHash3.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C411A0D398900FD5A13 /* MurmurHash3.c */; };
 		9CE01C631A0D399700FD5A13 /* config.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C491A0D399700FD5A13 /* config.c */; };
@@ -53,7 +53,6 @@
 		9C2739B61A0E6D3600ACAB53 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "../../src/openssl-1.0.1j-iOS/lib/libssl.a"; sourceTree = "<group>"; };
 		9C2739B91A0E7EC400ACAB53 /* libleveldb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleveldb.a; path = ../leveldb/libleveldb.a; sourceTree = "<group>"; };
 		9C2739BE1A0EC20000ACAB53 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
-		9C2739C01A0ED97900ACAB53 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = app/main.c; sourceTree = "<group>"; };
 		9C2739C21A0EDAE800ACAB53 /* bitc_ui.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = bitc_ui.c; path = app/bitc_ui.c; sourceTree = "<group>"; };
 		9C2739C31A0EDAE800ACAB53 /* bitc_ui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bitc_ui.h; path = app/bitc_ui.h; sourceTree = "<group>"; };
 		9C53A50D1A0A0BAD000A4511 /* bitc-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bitc-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +70,8 @@
 		9C53A5431A0A1AC4000A4511 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		9CD6200C1A0CBCFD0014E9D7 /* BlockDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockDetailViewController.h; sourceTree = "<group>"; };
 		9CD6200D1A0CBCFD0014E9D7 /* BlockDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockDetailViewController.m; sourceTree = "<group>"; };
+		9CDCFBCA1A0EE2BB002E2810 /* app.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = app.c; path = app/app.c; sourceTree = "<group>"; };
+		9CDCFBCC1A0EE347002E2810 /* app.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = app.h; sourceTree = "<group>"; };
 		9CE01C3F1A0D398900FD5A13 /* cJSON.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cJSON.c; sourceTree = "<group>"; };
 		9CE01C411A0D398900FD5A13 /* MurmurHash3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MurmurHash3.c; sourceTree = "<group>"; };
 		9CE01C431A0D398900FD5A13 /* cJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cJSON.h; sourceTree = "<group>"; };
@@ -149,9 +150,9 @@
 		9C2739C51A0EDCD000ACAB53 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				9CDCFBCA1A0EE2BB002E2810 /* app.c */,
 				9C2739C21A0EDAE800ACAB53 /* bitc_ui.c */,
 				9C2739C31A0EDAE800ACAB53 /* bitc_ui.h */,
-				9C2739C01A0ED97900ACAB53 /* main.c */,
 			);
 			name = app;
 			sourceTree = "<group>";
@@ -337,6 +338,7 @@
 		9CE01C6C1A0D39AB00FD5A13 /* public */ = {
 			isa = PBXGroup;
 			children = (
+				9CDCFBCC1A0EE347002E2810 /* app.h */,
 				9CE01C6D1A0D39AB00FD5A13 /* atomic.h */,
 				9CE01C6E1A0D39AB00FD5A13 /* basic_defs.h */,
 				9CE01C6F1A0D39AB00FD5A13 /* bitc-defs.h */,
@@ -454,6 +456,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CDCFBCB1A0EE2BB002E2810 /* app.c in Sources */,
 				9CE4B4F31A0AD41C005E878D /* BlockListController.m in Sources */,
 				9C53A5161A0A0BAD000A4511 /* AppDelegate.m in Sources */,
 				9CD6200E1A0CBCFD0014E9D7 /* BlockDetailViewController.m in Sources */,
@@ -484,7 +487,6 @@
 				9CE01C951A0D3E1500FD5A13 /* block-store.c in Sources */,
 				9CE01CA11A0D3E1500FD5A13 /* wallet.c in Sources */,
 				9CE01C9C1A0D3E1500FD5A13 /* peergroup.c in Sources */,
-				9C2739C11A0ED97900ACAB53 /* main.c in Sources */,
 				9CE01CA01A0D3E1500FD5A13 /* txdb.c in Sources */,
 				9CE01C9B1A0D3E1500FD5A13 /* peer.c in Sources */,
 			);
@@ -598,6 +600,7 @@
 					"/Users/maxime/src/openssl-1.0.1j-iOS/lib",
 					/Users/maxime/git/leveldb,
 				);
+				New_Setting = "";
 				PRODUCT_NAME = "bitc-ios";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/Users/maxime/src/openssl-1.0.1j-iOS/include";
@@ -616,6 +619,7 @@
 					"/Users/maxime/src/openssl-1.0.1j-iOS/lib",
 					/Users/maxime/git/leveldb,
 				);
+				New_Setting = "";
 				PRODUCT_NAME = "bitc-ios";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/Users/maxime/src/openssl-1.0.1j-iOS/include";

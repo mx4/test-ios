@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "app.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
    NSLog(@"%s", __FUNCTION__);
+   NSString* path = [NSSearchPathForDirectoriesInDomains(
+                                                         NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+   
+   NSLog(@"%@", path);
+   bitc_set_directory([path UTF8String]);
+
+   bitc_app_init();
    return YES;
 }
 

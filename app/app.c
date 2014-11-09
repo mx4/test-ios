@@ -44,6 +44,8 @@
 #include "rpc.h"
 #include "bitc_ui.h"
 
+#include "TargetConditionals.h"
+
 
 #define LGPFX "BITC:"
 
@@ -477,6 +479,23 @@ bitc_check_create_file(const char *filename,
    return res;
 }
 
+/*
+ *------------------------------------------------------------------------
+ *
+ * bitc_set_directory --
+ *
+ *------------------------------------------------------------------------
+ */
+
+static char *basePath = NULL;
+
+void
+bitc_set_directory(const char *path)
+{
+   basePath = safe_strdup(path);
+   Log("path: '%s'\n", basePath);
+}
+
 
 /*
  *------------------------------------------------------------------------
@@ -490,16 +509,18 @@ char *
 bitc_get_directory(void)
 {
    char *res;
-#ifdef TARGET_OS_IPHONE
-   res = safe_asprintf("~/Library/Application Support/");
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
+   //res = safe_asprintf("/Library/Application Support");
+   ASSERT(basePath);
+   res = safe_asprintf("%s/Library", basePath);
 #else
    char *home;
 
    home = util_gethomedir();
    res = safe_asprintf("%s/.bitc%s", home, btc->testnet ? "-testnet" : "");
    free(home);
-#endif
 
+#endif
    return res;
 }
 
@@ -622,15 +643,17 @@ bitc_check_wallet(void)
 
    printf("Your bitcoin address with this app:\n\n"
           "     %s\n\n", btc_addr);
-   printf("Type a key to continue...\n");
+//   printf("Type a key to continue...\n");
    free(btc_addr);
 
+#if 0
    printf("To navigate the UI:\n"
           " - <left> and <right> allow you to change panel,\n"
           " - <CTRL> + T to initiate a transaction,\n"
           " - type 'q' to exit.\n\n");
 
    printf("Your install of bitc is ready to go.\n");
+#endif
 
 exit:
    free(wltPath);
@@ -1150,7 +1173,21 @@ bitc_daemon(bool updateAndExit,
 /*
  *---------------------------------------------------------------------
  *
- * main --
+ * bitc_app_exit --
+ *
+ *---------------------------------------------------------------------
+ */
+
+void
+bitc_app_exit(void)
+{
+}
+
+
+/*
+ *---------------------------------------------------------------------
+ *
+ * bitc_app_init --
  *
  *---------------------------------------------------------------------
  */
@@ -1158,9 +1195,47 @@ bitc_daemon(bool updateAndExit,
 int
 bitc_app_init(void)
 {
+   char *configPath = NULL;
+   int res;
+
+   bitc_signal_install();
+   Log_SetLevel(1);
+   {
+      char *login = util_getusername();
+      char *logFile;
+      logFile = safe_asprintf("/tmp/bitc-%s%s.log",
+                              login ? login : "foo",
+                              btc->testnet ? "-testnet" : "");
+      Log_Init(logFile);
+      free(logFile);
+      free(login);
+   }
+   util_bumpcoresize();
+   bitc_check_config();
+
+   res = bitc_load_config(&btc->config, configPath);
+   if (res != 0) {
+      return res;
+   }
+   bitc_load_misc_config();
+
+   if (bitc_check_wallet()) {
+      return 0;
+   }
+
+   if (!wallet_verify(NULL, &btc->wallet_state)) {
+      return 0;
+   }
+
+   btc->lock = mutex_alloc();
+   btc->pw = poolworker_create(10);
+   bitc_openssl_init();
+
+//   bitc_daemon(1, 5);
 
    return 0;
 }
+
 
 /*
  *---------------------------------------------------------------------
