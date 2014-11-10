@@ -16,6 +16,9 @@
 		9C53A5211A0A0BAD000A4511 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C53A5201A0A0BAD000A4511 /* Images.xcassets */; };
 		9C53A5411A0A1A5F000A4511 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A5401A0A1A5F000A4511 /* LogViewController.m */; };
 		9C53A5441A0A1AC4000A4511 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A5431A0A1AC4000A4511 /* SettingsViewController.m */; };
+		9C9391AE1A10AFBC0074EB8B /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9391AB1A10AFBC0074EB8B /* libcrypto.a */; };
+		9C9391AF1A10AFBC0074EB8B /* libleveldb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9391AC1A10AFBC0074EB8B /* libleveldb.a */; };
+		9C9391B01A10AFBC0074EB8B /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9391AD1A10AFBC0074EB8B /* libssl.a */; };
 		9CD6200E1A0CBCFD0014E9D7 /* BlockDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6200D1A0CBCFD0014E9D7 /* BlockDetailViewController.m */; };
 		9CDCFBCB1A0EE2BB002E2810 /* app.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CDCFBCA1A0EE2BB002E2810 /* app.c */; };
 		9CE01C451A0D398900FD5A13 /* cJSON.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C3F1A0D398900FD5A13 /* cJSON.c */; };
@@ -43,13 +46,9 @@
 		9CE01CA01A0D3E1500FD5A13 /* txdb.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C8F1A0D3E1500FD5A13 /* txdb.c */; };
 		9CE01CA11A0D3E1500FD5A13 /* wallet.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C911A0D3E1500FD5A13 /* wallet.c */; };
 		9CE4B4F31A0AD41C005E878D /* BlockListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4B4F21A0AD41C005E878D /* BlockListController.m */; };
-		9CECF6B91A10A78E00A77F3A /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CECF6B61A10A78E00A77F3A /* libcrypto.a */; };
-		9CECF6BA1A10A78E00A77F3A /* libleveldb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CECF6B71A10A78E00A77F3A /* libleveldb.a */; };
-		9CECF6BB1A10A78E00A77F3A /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CECF6B81A10A78E00A77F3A /* libssl.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9C2739B91A0E7EC400ACAB53 /* libleveldb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleveldb.a; path = ../leveldb/libleveldb.a; sourceTree = "<group>"; };
 		9C2739BE1A0EC20000ACAB53 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		9C2739C21A0EDAE800ACAB53 /* bitc_ui.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = bitc_ui.c; path = app/bitc_ui.c; sourceTree = "<group>"; };
 		9C2739C31A0EDAE800ACAB53 /* bitc_ui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bitc_ui.h; path = app/bitc_ui.h; sourceTree = "<group>"; };
@@ -66,6 +65,9 @@
 		9C53A5401A0A1A5F000A4511 /* LogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogViewController.m; sourceTree = "<group>"; };
 		9C53A5421A0A1AC4000A4511 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		9C53A5431A0A1AC4000A4511 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		9C9391AB1A10AFBC0074EB8B /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "3rd-party/binaries/libcrypto.a"; sourceTree = "<group>"; };
+		9C9391AC1A10AFBC0074EB8B /* libleveldb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleveldb.a; path = "3rd-party/binaries/libleveldb.a"; sourceTree = "<group>"; };
+		9C9391AD1A10AFBC0074EB8B /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "3rd-party/binaries/libssl.a"; sourceTree = "<group>"; };
 		9CD6200C1A0CBCFD0014E9D7 /* BlockDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockDetailViewController.h; sourceTree = "<group>"; };
 		9CD6200D1A0CBCFD0014E9D7 /* BlockDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockDetailViewController.m; sourceTree = "<group>"; };
 		9CDCFBCA1A0EE2BB002E2810 /* app.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = app.c; path = app/app.c; sourceTree = "<group>"; };
@@ -128,12 +130,6 @@
 		9CE01C921A0D3E1500FD5A13 /* wallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wallet.h; sourceTree = "<group>"; };
 		9CE4B4F11A0AD41C005E878D /* BlockListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockListController.h; sourceTree = "<group>"; };
 		9CE4B4F21A0AD41C005E878D /* BlockListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockListController.m; sourceTree = "<group>"; };
-		9CECF6AD1A10A65900A77F3A /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
-		9CECF6AE1A10A65900A77F3A /* libleveldb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libleveldb.a; sourceTree = "<group>"; };
-		9CECF6AF1A10A65900A77F3A /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
-		9CECF6B61A10A78E00A77F3A /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "3rd-party/binaries/libcrypto.a"; sourceTree = "<group>"; };
-		9CECF6B71A10A78E00A77F3A /* libleveldb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleveldb.a; path = "3rd-party/binaries/libleveldb.a"; sourceTree = "<group>"; };
-		9CECF6B81A10A78E00A77F3A /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "3rd-party/binaries/libssl.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,9 +137,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CECF6B91A10A78E00A77F3A /* libcrypto.a in Frameworks */,
-				9CECF6BA1A10A78E00A77F3A /* libleveldb.a in Frameworks */,
-				9CECF6BB1A10A78E00A77F3A /* libssl.a in Frameworks */,
+				9C9391B01A10AFBC0074EB8B /* libssl.a in Frameworks */,
+				9C9391AE1A10AFBC0074EB8B /* libcrypto.a in Frameworks */,
+				9C9391AF1A10AFBC0074EB8B /* libleveldb.a in Frameworks */,
 				9C2739BF1A0EC20000ACAB53 /* libc++.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,12 +160,10 @@
 		9C53A5041A0A0BAD000A4511 = {
 			isa = PBXGroup;
 			children = (
-				9CECF6B61A10A78E00A77F3A /* libcrypto.a */,
-				9CECF6B71A10A78E00A77F3A /* libleveldb.a */,
-				9CECF6B81A10A78E00A77F3A /* libssl.a */,
-				9CECF6AC1A10A65900A77F3A /* binaries */,
+				9C9391AB1A10AFBC0074EB8B /* libcrypto.a */,
+				9C9391AC1A10AFBC0074EB8B /* libleveldb.a */,
+				9C9391AD1A10AFBC0074EB8B /* libssl.a */,
 				9C2739BE1A0EC20000ACAB53 /* libc++.dylib */,
-				9C2739B91A0E7EC400ACAB53 /* libleveldb.a */,
 				9C2739C51A0EDCD000ACAB53 /* app */,
 				9CE01C731A0D3E1500FD5A13 /* core */,
 				9CE01C6C1A0D39AB00FD5A13 /* public */,
@@ -391,16 +385,6 @@
 				9CE01C921A0D3E1500FD5A13 /* wallet.h */,
 			);
 			path = core;
-			sourceTree = "<group>";
-		};
-		9CECF6AC1A10A65900A77F3A /* binaries */ = {
-			isa = PBXGroup;
-			children = (
-				9CECF6AD1A10A65900A77F3A /* libcrypto.a */,
-				9CECF6AE1A10A65900A77F3A /* libleveldb.a */,
-				9CECF6AF1A10A65900A77F3A /* libssl.a */,
-			);
-			path = binaries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
