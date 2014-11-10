@@ -487,6 +487,7 @@ bitcui_log_cb(const char *ts,
       return;
    }
 
+   printf("%s: %s", __FUNCTION__, str);
    bitcui_req_notify_log_update(ts, str);
 }
 
@@ -530,23 +531,26 @@ bitcui_log_init(void)
  *---------------------------------------------------
  */
 
-static int
+int
 bitcui_init(void)
 {
    int res;
 
-   bitcui_set_status("ui starting..");
    btcui->poll = poll_create();
 
    res = bitcui_notify_init(&btcui->eventFd, &btcui->notifyFd);
    ASSERT(res == 0);
 
-//   fx_init();
-//   ncui_init();
+#if linux
+   fx_init();
+   ncui_init();
+#endif
    bitcui_log_init();
 
-//   poll_callback_device(btcui->poll, STDIN_FILENO, 1, 0, 1, ncui_input_cb, NULL);
-//   poll_callback_time(btcui->poll, 1 * 1000 * 1000 / 2, TRUE, ncui_time_cb, NULL);
+#if linux
+   poll_callback_device(btcui->poll, STDIN_FILENO, 1, 0, 1, ncui_input_cb, NULL);
+   poll_callback_time(btcui->poll, 1 * 1000 * 1000 / 2, TRUE, ncui_time_cb, NULL);
+#endif
 
    return 0;
 }

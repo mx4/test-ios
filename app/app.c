@@ -1169,6 +1169,28 @@ bitc_daemon(bool updateAndExit,
    Warning(LGPFX" daemon stopped.\n");
 }
 
+static void
+bitc_daemon_thread(void *ptr)
+{
+   char *errStr = NULL;
+   int res;
+
+   res = bitc_init(NULL, FALSE /*updateAndExit*/, 5, 10, &errStr);
+   if (res) {
+      printf("failed to bitc_init\n");
+      return;
+   }
+   bitc_daemon(FALSE, 5);
+}
+
+static void
+bitc_daemonize(void)
+{
+   pthread_t th;
+
+   pthread_create(&th, NULL, &bitc_daemon_thread, NULL);
+}
+
 
 /*
  *---------------------------------------------------------------------
@@ -1231,7 +1253,15 @@ bitc_app_init(void)
    btc->pw = poolworker_create(10);
    bitc_openssl_init();
 
-//   bitc_daemon(1, 5);
+   btcui->inuse = 1;
+   btcui->lock  = mutex_alloc();
+   btcui->cv    = condvar_alloc();
+   btcui->idx   = -1;
+
+   bitcui_init();
+   condvar_signal(btcui->cv);
+
+   bitc_daemonize();
 
    return 0;
 }
