@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9C2739B71A0E6D3600ACAB53 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2739B51A0E6D3600ACAB53 /* libcrypto.a */; };
-		9C2739B81A0E6D3600ACAB53 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2739B61A0E6D3600ACAB53 /* libssl.a */; };
-		9C2739BD1A0E82DF00ACAB53 /* libleveldb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2739B91A0E7EC400ACAB53 /* libleveldb.a */; };
 		9C2739BF1A0EC20000ACAB53 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2739BE1A0EC20000ACAB53 /* libc++.dylib */; };
 		9C2739C41A0EDAE800ACAB53 /* bitc_ui.c in Sources */ = {isa = PBXBuildFile; fileRef = 9C2739C21A0EDAE800ACAB53 /* bitc_ui.c */; };
 		9C53A5131A0A0BAD000A4511 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A5121A0A0BAD000A4511 /* main.m */; };
@@ -46,11 +43,12 @@
 		9CE01CA01A0D3E1500FD5A13 /* txdb.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C8F1A0D3E1500FD5A13 /* txdb.c */; };
 		9CE01CA11A0D3E1500FD5A13 /* wallet.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C911A0D3E1500FD5A13 /* wallet.c */; };
 		9CE4B4F31A0AD41C005E878D /* BlockListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4B4F21A0AD41C005E878D /* BlockListController.m */; };
+		9CECF6B31A10A67E00A77F3A /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CECF6AD1A10A65900A77F3A /* libcrypto.a */; };
+		9CECF6B41A10A67E00A77F3A /* libleveldb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CECF6AE1A10A65900A77F3A /* libleveldb.a */; };
+		9CECF6B51A10A67E00A77F3A /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CECF6AF1A10A65900A77F3A /* libssl.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9C2739B51A0E6D3600ACAB53 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../../src/openssl-1.0.1j-iOS/lib/libcrypto.a"; sourceTree = "<group>"; };
-		9C2739B61A0E6D3600ACAB53 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "../../src/openssl-1.0.1j-iOS/lib/libssl.a"; sourceTree = "<group>"; };
 		9C2739B91A0E7EC400ACAB53 /* libleveldb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleveldb.a; path = ../leveldb/libleveldb.a; sourceTree = "<group>"; };
 		9C2739BE1A0EC20000ACAB53 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		9C2739C21A0EDAE800ACAB53 /* bitc_ui.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = bitc_ui.c; path = app/bitc_ui.c; sourceTree = "<group>"; };
@@ -130,6 +128,9 @@
 		9CE01C921A0D3E1500FD5A13 /* wallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wallet.h; sourceTree = "<group>"; };
 		9CE4B4F11A0AD41C005E878D /* BlockListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockListController.h; sourceTree = "<group>"; };
 		9CE4B4F21A0AD41C005E878D /* BlockListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockListController.m; sourceTree = "<group>"; };
+		9CECF6AD1A10A65900A77F3A /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		9CECF6AE1A10A65900A77F3A /* libleveldb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libleveldb.a; sourceTree = "<group>"; };
+		9CECF6AF1A10A65900A77F3A /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,10 +138,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CECF6B31A10A67E00A77F3A /* libcrypto.a in Frameworks */,
+				9CECF6B41A10A67E00A77F3A /* libleveldb.a in Frameworks */,
+				9CECF6B51A10A67E00A77F3A /* libssl.a in Frameworks */,
 				9C2739BF1A0EC20000ACAB53 /* libc++.dylib in Frameworks */,
-				9C2739BD1A0E82DF00ACAB53 /* libleveldb.a in Frameworks */,
-				9C2739B71A0E6D3600ACAB53 /* libcrypto.a in Frameworks */,
-				9C2739B81A0E6D3600ACAB53 /* libssl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,10 +161,9 @@
 		9C53A5041A0A0BAD000A4511 = {
 			isa = PBXGroup;
 			children = (
+				9CECF6AC1A10A65900A77F3A /* binaries */,
 				9C2739BE1A0EC20000ACAB53 /* libc++.dylib */,
 				9C2739B91A0E7EC400ACAB53 /* libleveldb.a */,
-				9C2739B51A0E6D3600ACAB53 /* libcrypto.a */,
-				9C2739B61A0E6D3600ACAB53 /* libssl.a */,
 				9C2739C51A0EDCD000ACAB53 /* app */,
 				9CE01C731A0D3E1500FD5A13 /* core */,
 				9CE01C6C1A0D39AB00FD5A13 /* public */,
@@ -387,6 +387,16 @@
 			path = core;
 			sourceTree = "<group>";
 		};
+		9CECF6AC1A10A65900A77F3A /* binaries */ = {
+			isa = PBXGroup;
+			children = (
+				9CECF6AD1A10A65900A77F3A /* libcrypto.a */,
+				9CECF6AE1A10A65900A77F3A /* libleveldb.a */,
+				9CECF6AF1A10A65900A77F3A /* libssl.a */,
+			);
+			path = binaries;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -600,6 +610,7 @@
 					"$(inherited)",
 					"/Users/maxime/src/openssl-1.0.1j-iOS/lib",
 					/Users/maxime/git/leveldb,
+					"$(PROJECT_DIR)/binaries",
 				);
 				New_Setting = "";
 				PRODUCT_NAME = "bitc-ios";
@@ -620,6 +631,7 @@
 					"$(inherited)",
 					"/Users/maxime/src/openssl-1.0.1j-iOS/lib",
 					/Users/maxime/git/leveldb,
+					"$(PROJECT_DIR)/binaries",
 				);
 				New_Setting = "";
 				PRODUCT_NAME = "bitc-ios";
