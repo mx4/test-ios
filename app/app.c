@@ -510,7 +510,6 @@ bitc_get_directory(void)
 {
    char *res;
 #if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
-   //res = safe_asprintf("/Library/Application Support");
    ASSERT(basePath);
    res = safe_asprintf("%s/Library", basePath);
 #else
@@ -1169,7 +1168,7 @@ bitc_daemon(bool updateAndExit,
    Warning(LGPFX" daemon stopped.\n");
 }
 
-static void
+static void *
 bitc_daemon_thread(void *ptr)
 {
    char *errStr = NULL;
@@ -1178,17 +1177,33 @@ bitc_daemon_thread(void *ptr)
    res = bitc_init(NULL, FALSE /*updateAndExit*/, 5, 10, &errStr);
    if (res) {
       printf("failed to bitc_init\n");
-      return;
+      goto exit;
    }
    bitc_daemon(FALSE, 5);
+
+exit:
+   while (btc->stop == 0) {
+      usleep(10);
+   }
+   printf("core thread gone\n");
+   return NULL;
 }
 
 static void
 bitc_daemonize(void)
 {
+   pthread_attr_t  attr;
    pthread_t th;
+   int res;
 
-   pthread_create(&th, NULL, &bitc_daemon_thread, NULL);
+   res = pthread_attr_init(&attr);
+   ASSERT(res == 0);
+   res = pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
+   ASSERT(res == 0);
+
+   pthread_create(&th, &attr, &bitc_daemon_thread, NULL);
+
+   pthread_attr_destroy(&attr);
 }
 
 
@@ -1223,7 +1238,7 @@ bitc_app_init(void)
    bitc_signal_install();
    Log_SetLevel(1);
    {
-      char *login = util_getusername();
+      char *login = safe_strdup("ios");
       char *logFile;
       logFile = safe_asprintf("/tmp/bitc-%s%s.log",
                               login ? login : "foo",
@@ -1242,15 +1257,15 @@ bitc_app_init(void)
    bitc_load_misc_config();
 
    if (bitc_check_wallet()) {
-      return 0;
+      return 1;
    }
 
    if (!wallet_verify(NULL, &btc->wallet_state)) {
-      return 0;
+      return 1;
    }
 
    btc->lock = mutex_alloc();
-   btc->pw = poolworker_create(10);
+   btc->pw = NULL; //poolworker_create(10);
    bitc_openssl_init();
 
    btcui->inuse = 1;

@@ -57,10 +57,10 @@ static void ReadEventCB(CFFileDescriptorRef fdref, CFOptionFlags callBackTypes, 
 
    fdref = CFFileDescriptorCreate(kCFAllocatorDefault, btcui->eventFd, false, ReadEventCB, NULL);
    CFFileDescriptorEnableCallBacks(fdref, kCFFileDescriptorReadCallBack);
-   source = CFFileDescriptorCreateRunLoopSource(kCFAllocatorDefault, fdref, 0);
-   CFRunLoopAddSource(CFRunLoopGetCurrent(), source, kCFRunLoopDefaultMode);
-   CFRelease(source);
    
+   source = CFFileDescriptorCreateRunLoopSource(kCFAllocatorDefault, fdref, 0);
+   CFRunLoopAddSource(CFRunLoopGetMain(), source, kCFRunLoopDefaultMode);
+    
    return YES;
 }
 

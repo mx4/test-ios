@@ -411,16 +411,7 @@ file_pwrite(const struct file_descriptor *desc,
    }
 
    do {
-#ifdef __CYGWIN__
-	   NOT_TESTED();
-      res = lseek(desc->fd, 0, SEEK_SET);
-      if (res < 0) {
-         break;
-      } 
-      res = write(desc->fd, buf, len);
-#else
       res = pwrite(desc->fd, buf, len, offset);
-#endif
    } while (res == -1 && (errno == EAGAIN || errno == EINTR));
 
    if (res == -1) {
@@ -458,22 +449,14 @@ file_pread(const struct file_descriptor *desc,
    }
 
    do {
-#ifdef __CYGWIN__
-	   NOT_TESTED();
-      res = lseek(desc->fd, 0, SEEK_SET);
-      if (res < 0) {
-         break;
-      } 
-      res = read(desc->fd, buf, len);
-#else
       res = pread(desc->fd, buf, len, offset);
-#endif
    } while (res == -1 && (errno == EAGAIN || errno == EINTR));
-
+   
    if (res == -1) {
       int err = errno;
-      Log(LGPFX" failed to pread %zu bytes from '%s' at off=%llu: %s (%d)\n",
-          len, desc->name, offset, strerror(err), err);
+      Log(LGPFX" failed to pread %zu bytes from '%s' (%d) at off=%llu: %s (%d)\n",
+          len, desc->name, desc->fd, offset, strerror(err), err);
+      ASSERT(0);
       return err;
    }
    if (numRead) {
@@ -548,6 +531,7 @@ file_open(const char *name,
 #endif
 
    desc->fd = open(name, flags);
+   printf("fd=%d (errno=%d)\n", desc->fd, errno);
 
    if (desc->fd < 0) {
       err = errno;
