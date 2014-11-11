@@ -18,12 +18,10 @@
 @synthesize blockNumberLabel = _blockNumberLabel;
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+   [super viewDidLoad];
 
-    UILabel *detailLabel = (UILabel*) [ self.view viewWithTag:12];
-    detailLabel.text = [NSString stringWithFormat:@"Block %@", _blockNumber];
-    
-    NSLog(@"%s: %@", __FUNCTION__, _blockNumber);
+   _blockNumberLabel.text = [NSString stringWithFormat:@"Block %@", _blockNumber];
+   NSLog(@"%s: %@", __FUNCTION__, _blockNumber);
 }
 
 - (void)didReceiveMemoryWarning {

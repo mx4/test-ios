@@ -1,5 +1,3 @@
-//#include <netdb.h>
-
 #include <errno.h>
 #include <stdarg.h>
 #include <stdio.h>
@@ -11,13 +9,13 @@
 #include "bitc_ui.h"
 #include "util.h"
 #include "hash.h"
-//#include "ncui.h"
 #include "poll.h"
 #include "bitc.h"
 #include "wallet.h"
 #include "fx.h"
 #include "poolworker.h"
 #include "ip_info.h"
+#include "bitc_ios.h"
 
 #define LGPFX "BTCUI:"
 
@@ -309,13 +307,13 @@ bitcui_req_exit(void)
 /*
  *---------------------------------------------------------------------
  *
- * bitcui_notify_cb --
+ * bitcui_process_update --
  *
  *---------------------------------------------------------------------
  */
 
-static void
-bitcui_notify_cb(void *clientData)
+void
+bitcui_process_update(void)
 {
    ssize_t res;
 
@@ -358,14 +356,12 @@ bitcui_notify_cb(void *clientData)
          LOG(1, (LGPFX" handling REQ_TX_UPDATE\n"));
 //         ncui_tx_update();
          break;
-      case BTCUI_REQ_LOG:
-         {
-            struct bitcui_log_req *req = (struct bitcui_log_req*)msg->data;
-//            ncui_log_cb(req->ts, req->str, NULL);
-            free(req->ts);
-            free(req->str);
-         }
-         break;
+      case BTCUI_REQ_LOG: {
+         struct bitcui_log_req *req = (struct bitcui_log_req*)msg->data;
+         bitc_ios_log(req->ts, req->str);
+         free(req->ts);
+         free(req->str);
+      } break;
       default:
          Warning(LGPFX" unhandled btcui msg %d\n", msg->type);
          ASSERT(0);
@@ -376,6 +372,21 @@ bitcui_notify_cb(void *clientData)
       free(msg);
    }
    mutex_unlock(btcui->lock);
+}
+
+
+/*
+ *---------------------------------------------------------------------
+ *
+ * bitcui_notify_cb --
+ *
+ *---------------------------------------------------------------------
+ */
+
+static void
+bitcui_notify_cb(void *clientData)
+{
+   bitcui_process_update();
 }
 
 
@@ -487,7 +498,6 @@ bitcui_log_cb(const char *ts,
       return;
    }
 
-   printf("%s: %s", __FUNCTION__, str);
    bitcui_req_notify_log_update(ts, str);
 }
 

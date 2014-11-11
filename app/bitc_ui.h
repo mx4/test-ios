@@ -139,6 +139,7 @@ void bitcui_fx_update(void);
 void bitcui_stop(void);
 int  bitcui_start(bool withui);
 void bitcui_req_notify_info_update(void);
-int bitcui_init(void);
+int  bitcui_init(void);
+void bitcui_process_update(void);
 
 #endif /* __BITC_UI_H__ */

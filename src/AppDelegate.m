@@ -32,7 +32,10 @@ static void ReadEventCB(CFFileDescriptorRef fdref, CFOptionFlags callBackTypes, 
    res = read(fd, &data, 1);
    if (res < 0) {
       printf("Failed to read ui fd: %d\n", errno);
+   
    }
+   
+   bitcui_process_update();
    
    CFFileDescriptorEnableCallBacks(fdref, kCFFileDescriptorReadCallBack);
 }
@@ -55,9 +58,10 @@ static void ReadEventCB(CFFileDescriptorRef fdref, CFOptionFlags callBackTypes, 
 
    bitc_set_directory([path UTF8String]);
  
-   NSLog(@"bitc_app_init\n");
    res = bitc_app_init();
-   NSLog(@"bitc_app_init: %d\n", res);
+   if (res) {
+      NSLog(@"bitc_app_init: %d\n", res);
+   }
 
    fdref = CFFileDescriptorCreate(kCFAllocatorDefault, btcui->eventFd, false, ReadEventCB, NULL);
    CFFileDescriptorEnableCallBacks(fdref, kCFFileDescriptorReadCallBack);

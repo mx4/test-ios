@@ -14,14 +14,29 @@
 
 @implementation LogViewController
 
+static UITextView *logView;
+
+void
+LogViewAppend(const char *pfx,
+              const char *line)
+{
+   NSLog(@"%s: %s", pfx, line);
+   
+   logView.text = [ logView.text stringByAppendingFormat: @"%s: %s", pfx, line ];
+ 
+   NSString *s = [ NSString stringWithFormat:@"%s: %s %@", pfx, line, logView.text ];
+   
+   logView.text = s;
+}
+
+
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   [super viewDidLoad];
+   logView = _logTextView;
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+   [super didReceiveMemoryWarning];
 }
 
 /*

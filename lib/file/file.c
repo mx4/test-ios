@@ -531,7 +531,6 @@ file_open(const char *name,
 #endif
 
    desc->fd = open(name, flags);
-   printf("fd=%d (errno=%d)\n", desc->fd, errno);
 
    if (desc->fd < 0) {
       err = errno;

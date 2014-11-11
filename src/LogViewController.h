@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LogViewController : UIViewController
+@interface LogViewController : UIViewController;
+@property (weak, nonatomic) IBOutlet UITextView *logTextView;
 
 @end

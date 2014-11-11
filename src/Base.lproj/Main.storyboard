@@ -113,6 +113,9 @@
                             <constraint firstItem="pbm-VL-lKl" firstAttribute="top" secondItem="cBF-Wv-Dln" secondAttribute="bottom" constant="400" id="yBz-Uu-lGY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blockNumberLabel" destination="cBF-Wv-Dln" id="CJn-kC-Hlz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w1T-9k-hrG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,48 +133,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mWh-86-BtM">
-                                <rect key="frame" x="16" y="0.0" width="568" height="551"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mWh-86-BtM">
+                                <rect key="frame" x="16" y="28" width="974" height="523"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kvc-HZ-hFu">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="13" contentMode="scaleToFill" misplaced="YES" bounces="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7k-9h-pc0">
+                                        <rect key="frame" x="0.0" y="-8" width="974" height="523"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="kvc-HZ-hFu" secondAttribute="bottom" id="Hcr-Nd-60U"/>
-                                    <constraint firstAttribute="trailing" secondItem="kvc-HZ-hFu" secondAttribute="trailing" id="VyI-ek-yTH"/>
-                                    <constraint firstItem="kvc-HZ-hFu" firstAttribute="top" secondItem="mWh-86-BtM" secondAttribute="top" id="cOs-TB-B09"/>
-                                    <constraint firstItem="kvc-HZ-hFu" firstAttribute="leading" secondItem="mWh-86-BtM" secondAttribute="leading" id="vl9-6x-Lt9"/>
+                                    <constraint firstItem="D7k-9h-pc0" firstAttribute="top" secondItem="mWh-86-BtM" secondAttribute="top" id="0ia-L5-PNe"/>
+                                    <constraint firstAttribute="centerX" secondItem="D7k-9h-pc0" secondAttribute="centerX" id="5Yn-NH-Rd1"/>
+                                    <constraint firstItem="D7k-9h-pc0" firstAttribute="leading" secondItem="mWh-86-BtM" secondAttribute="leading" id="5tM-ys-D3A"/>
+                                    <constraint firstAttribute="bottom" secondItem="D7k-9h-pc0" secondAttribute="bottom" id="LHa-G9-PIO"/>
+                                    <constraint firstAttribute="trailing" secondItem="D7k-9h-pc0" secondAttribute="trailing" id="LvY-Oc-POW"/>
+                                    <constraint firstItem="D7k-9h-pc0" firstAttribute="leading" secondItem="mWh-86-BtM" secondAttribute="leading" id="Nxb-M1-aGH"/>
+                                    <constraint firstAttribute="trailing" secondItem="D7k-9h-pc0" secondAttribute="trailing" id="WXl-mg-Pzi"/>
+                                    <constraint firstItem="D7k-9h-pc0" firstAttribute="top" secondItem="mWh-86-BtM" secondAttribute="top" id="aKS-8x-9O0"/>
+                                    <constraint firstItem="D7k-9h-pc0" firstAttribute="top" secondItem="mWh-86-BtM" secondAttribute="top" id="g5i-cu-2oq"/>
+                                    <constraint firstAttribute="centerY" secondItem="D7k-9h-pc0" secondAttribute="centerY" id="sAQ-UC-4s5"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="mWh-86-BtM" firstAttribute="top" secondItem="4jG-iW-gbG" secondAttribute="top" id="31r-p6-DBu"/>
-                            <constraint firstItem="DXc-W7-lCp" firstAttribute="top" secondItem="mWh-86-BtM" secondAttribute="bottom" id="616-fu-dKV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mWh-86-BtM" secondAttribute="trailing" id="GBF-94-ql1"/>
-                            <constraint firstItem="mWh-86-BtM" firstAttribute="leading" secondItem="4jG-iW-gbG" secondAttribute="leading" id="NXX-cq-JT5"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mWh-86-BtM" secondAttribute="trailing" id="Nsg-cZ-K0W"/>
-                            <constraint firstItem="mWh-86-BtM" firstAttribute="leading" secondItem="4jG-iW-gbG" secondAttribute="leadingMargin" id="UBn-db-Zlz"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="mWh-86-BtM" secondAttribute="bottom" id="poZ-wl-QJt"/>
+                            <constraint firstItem="mWh-86-BtM" firstAttribute="top" secondItem="dAd-xe-ybX" secondAttribute="bottom" constant="8" symbolic="YES" id="Bu3-oa-waM"/>
+                            <constraint firstItem="mWh-86-BtM" firstAttribute="leading" secondItem="4jG-iW-gbG" secondAttribute="leadingMargin" id="CE1-XF-tHx"/>
+                            <constraint firstItem="mWh-86-BtM" firstAttribute="bottom" secondItem="DXc-W7-lCp" secondAttribute="top" id="HPK-t3-2b3"/>
+                            <constraint firstItem="mWh-86-BtM" firstAttribute="trailing" secondItem="4jG-iW-gbG" secondAttribute="trailingMargin" id="Zm0-Us-5gE"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="NXX-cq-JT5"/>
-                                <exclude reference="poZ-wl-QJt"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Logs" id="LEK-Rs-ulW">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-18"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="logTextView" destination="D7k-9h-pc0" id="pyg-0a-vGK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3tR-vG-2fi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1257" y="617"/>
+            <point key="canvasLocation" x="-810" y="1005"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
