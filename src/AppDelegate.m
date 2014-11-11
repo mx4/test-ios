@@ -42,6 +42,7 @@ static void ReadEventCB(CFFileDescriptorRef fdref, CFOptionFlags callBackTypes, 
    CFFileDescriptorRef fdref;
    CFRunLoopSourceRef source;
    NSString *path;
+   int res;
 
    /* make sure cocoa knows we're multithreaded */
    [[NSThread new] start];
@@ -53,7 +54,10 @@ static void ReadEventCB(CFFileDescriptorRef fdref, CFOptionFlags callBackTypes, 
    NSLog(@"%s: %@", __FUNCTION__, path);
 
    bitc_set_directory([path UTF8String]);
-   bitc_app_init();
+ 
+   NSLog(@"bitc_app_init\n");
+   res = bitc_app_init();
+   NSLog(@"bitc_app_init: %d\n", res);
 
    fdref = CFFileDescriptorCreate(kCFAllocatorDefault, btcui->eventFd, false, ReadEventCB, NULL);
    CFFileDescriptorEnableCallBacks(fdref, kCFFileDescriptorReadCallBack);

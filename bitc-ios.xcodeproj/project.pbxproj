@@ -588,6 +588,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				"GCC_WARN_64_TO_32_BIT_CONVERSION[arch=*64]" = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -616,6 +617,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				"HEADER_SEARCH_PATHS[arch=*]" = /Users/maxime/git/leveldb/include;
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info.plist";

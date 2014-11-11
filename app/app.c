@@ -1194,12 +1194,10 @@ bitc_daemonize(void)
 {
    pthread_attr_t  attr;
    pthread_t th;
-   int res;
 
-   res = pthread_attr_init(&attr);
-   ASSERT(res == 0);
-   res = pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
-   ASSERT(res == 0);
+   pthread_attr_init(&attr);
+   pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
+   pthread_attr_setstacksize(&attr, 65536 * 128);
 
    pthread_create(&th, &attr, &bitc_daemon_thread, NULL);
 

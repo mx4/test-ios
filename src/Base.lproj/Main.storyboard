@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Dashboard-->
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Dashboard" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="228" y="31" width="144.5" height="36"/>
+                                <rect key="frame" x="228" y="31" width="145" height="36"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" label="Dashboard"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -129,11 +130,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mWh-86-BtM">
-                                <rect key="frame" x="0.0" y="40" width="612" height="579"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mWh-86-BtM">
+                                <rect key="frame" x="16" y="0.0" width="568" height="551"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kvc-HZ-hFu">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="kvc-HZ-hFu" secondAttribute="bottom" id="Hcr-Nd-60U"/>
+                                    <constraint firstAttribute="trailing" secondItem="kvc-HZ-hFu" secondAttribute="trailing" id="VyI-ek-yTH"/>
+                                    <constraint firstItem="kvc-HZ-hFu" firstAttribute="top" secondItem="mWh-86-BtM" secondAttribute="top" id="cOs-TB-B09"/>
+                                    <constraint firstItem="kvc-HZ-hFu" firstAttribute="leading" secondItem="mWh-86-BtM" secondAttribute="leading" id="vl9-6x-Lt9"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mWh-86-BtM" firstAttribute="top" secondItem="4jG-iW-gbG" secondAttribute="top" id="31r-p6-DBu"/>
+                            <constraint firstItem="DXc-W7-lCp" firstAttribute="top" secondItem="mWh-86-BtM" secondAttribute="bottom" id="616-fu-dKV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mWh-86-BtM" secondAttribute="trailing" id="GBF-94-ql1"/>
+                            <constraint firstItem="mWh-86-BtM" firstAttribute="leading" secondItem="4jG-iW-gbG" secondAttribute="leading" id="NXX-cq-JT5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mWh-86-BtM" secondAttribute="trailing" id="Nsg-cZ-K0W"/>
+                            <constraint firstItem="mWh-86-BtM" firstAttribute="leading" secondItem="4jG-iW-gbG" secondAttribute="leadingMargin" id="UBn-db-Zlz"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="mWh-86-BtM" secondAttribute="bottom" id="poZ-wl-QJt"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="NXX-cq-JT5"/>
+                                <exclude reference="poZ-wl-QJt"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Logs" id="LEK-Rs-ulW">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-18"/>
@@ -141,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3tR-vG-2fi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-810" y="973"/>
+            <point key="canvasLocation" x="-1257" y="617"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
