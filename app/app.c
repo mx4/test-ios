@@ -32,12 +32,10 @@
 #include "netasync.h"
 #include "key.h"
 #include "addrbook.h"
-#include "serialize.h"
+//#include "serialize.h"
 #include "file.h"
 #include "bitc.h"
 #include "buff.h"
-//#include "test.h"
-//#include "ncui.h"
 #include "base58.h"
 #include "ip_info.h"
 #include "crypt.h"
@@ -66,21 +64,6 @@ static void bitc_sigint_handler(int sig);
 static struct BITCApp theBitcApp;
 struct BITCApp *btc = &theBitcApp;
 bool bitc_testing = 0;
-
-
-/*
- *---------------------------------------------------------------------
- *
- * bitc_signal_int_default --
- *
- *---------------------------------------------------------------------
- */
-
-static void
-bitc_signal_int_default(void)
-{
-   signal(SIGINT, SIG_DFL);
-}
 
 
 /*
@@ -123,101 +106,6 @@ bitc_signal_install(void)
 /*
  *---------------------------------------------------------------------
  *
- * bitc_get_password --
- *
- *---------------------------------------------------------------------
- */
-
-static struct secure_area *
-bitc_get_password(void)
-{
-   struct secure_area *sec;
-   struct termios old;
-   struct termios new;
-   int res;
-
-   res = tcgetattr(STDIN_FILENO, &old);
-   ASSERT(res == 0);
-   new = old;
-   new.c_lflag &= ~ECHO;
-   res = tcsetattr(STDIN_FILENO, TCSANOW, &new);
-   ASSERT(res == 0);
-
-   sec = secure_alloc(256);
-   sec->len = 0;
-
-   bitc_signal_int_default();
-
-   while (btc->stop == 0) {
-      char c = getchar();
-      if (c == '\n' || c == '\r') {
-         break;
-      }
-      if (c == '\b') {
-         if (sec->len > 0) {
-            sec->len--;
-            sec->buf[sec->len] = '\0';
-         }
-         continue;
-      }
-      sec->buf[sec->len] = c;
-      sec->len++;
-      ASSERT(sec->len < sec->alloc_len);
-   }
-   bitc_signal_install();
-
-   sec->buf[sec->len] = '\0';
-   sec->len++;
-
-   tcsetattr(STDIN_FILENO, TCSANOW, &old);
-
-   return sec;
-}
-
-
-/*
- *---------------------------------------------------------------------
- *
- * bitc_encrypt_wallet --
- *
- *---------------------------------------------------------------------
- */
-
-static int
-bitc_encrypt_wallet(struct secure_area *pass_old,
-                    struct secure_area *pass_new)
-{
-   char *errStr = NULL;
-   int res;
-
-   if (pass_new == NULL) {
-      Warning("You need to specify a password.\n");
-      return 1;
-   }
-
-   printf("Encrypting wallet with passphrase.\n");
-   res = blockstore_init(btc->config, &btc->blockStore);
-   ASSERT(res == 0);
-   res = wallet_open(btc->config, pass_old, &errStr, &btc->wallet);
-   ASSERT(res == 0);
-
-   res = wallet_encrypt(btc->wallet, pass_new);
-   if (res) {
-      Warning("Failed to encrypt wallet.\n");
-   } else {
-      printf("Done.\n");
-   }
-
-   wallet_close(btc->wallet);
-   blockstore_exit(btc->blockStore);
-
-   return res;
-}
-
-
-/*
- *---------------------------------------------------------------------
- *
  * bitc_add_address --
  *
  *---------------------------------------------------------------------
@@ -245,72 +133,6 @@ bitc_add_address(const char         *desc,
    blockstore_exit(btc->blockStore);
 
    return res;
-}
-
-
-/*
- *---------------------------------------------------------------------
- *
- * bitc_bye --
- *
- *---------------------------------------------------------------------
- */
-
-static void
-bitc_bye(void)
-{
-   printf("Contribute! https://github.com/bit-c/bitc\n");
-}
-
-
-/*
- *---------------------------------------------------------------------
- *
- * bitc_version_and_exit --
- *
- *---------------------------------------------------------------------
- */
-
-static void
-bitc_version_and_exit(void)
-{
-   printf("bitc: %s.\n"
-          " - compiled on %s at %s,\n"
-          " - version: %s.\n",
-          BTC_CLIENT_DESC,
-          __DATE__, __TIME__,
-          BTC_CLIENT_VERSION);
-
-   exit(0);
-}
-
-
-/*
- *---------------------------------------------------------------------
- *
- * bitc_usage --
- *
- *---------------------------------------------------------------------
- */
-
-static void
-bitc_usage(void)
-{
-   printf("bitc: %s.\n"
-          "Options:\n"
-          " -a, --address                  generate new address, add to wallet\n"
-          " -c, --config     <configPath>  config file to use, default: ~/.bitc/main.cfg\n"
-          " -d, --daemon                   daemon mode: no-ui\n"
-          " -h, --help                     show this help message\n"
-          " -e, --encrypt                  encrypt the wallet file\n"
-          " -n, --numPeers   <maxPeers>    number of peers to connect to, default is 5\n"
-          " -p, --passphrase               prompt for passphrase\n"
-          " -t, --test       <param>       test suite: argument is the name of the test\n"
-          " -T, --testnet                  connect to testnet\n"
-          " -u, --update                   update block-store and exit\n"
-          " -v, --version                  display version string and exit\n"
-          " -z, --zap                      zap headers & txdb (wallet is preserved)\n",
-          BTC_CLIENT_DESC);
 }
 
 
@@ -1269,7 +1091,8 @@ bitc_app_init(void)
    btcui->inuse = 1;
    btcui->lock  = mutex_alloc();
    btcui->cv    = condvar_alloc();
-   btcui->idx   = -1;
+   btcui->blockConsIdx = -1;
+   btcui->blockProdIdx = -1;
 
    bitcui_init();
    condvar_signal(btcui->cv);

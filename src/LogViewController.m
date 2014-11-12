@@ -32,6 +32,7 @@ LogViewAppend(const char *pfx,
 - (void)viewDidLoad {
    [super viewDidLoad];
    logView = _logTextView;
+   logView.text = logText;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -139,7 +139,7 @@ btcmsg_print_txout(const btc_msg_tx_out *txOut)
    uint32 slen;
    char *addr = NULL;
 
-   slen = (uint32)txOut->scriptLength;
+   slen = txOut->scriptLength;
 
    if (slen == 25 && txOut->scriptPubKey &&
        txOut->scriptPubKey[0] == OP_DUP &&
@@ -685,7 +685,7 @@ btcmsg_parse_headers(struct buff       *buf,
    ASSERT(buff_space_left(buf) == 0);
 
    *headersOut = headers;
-   *num = (int)n;
+   *num = n;
 
    return res;
 }
@@ -731,7 +731,7 @@ btcmsg_craft_msgheader(struct buff **bufOut,
    memset(&h, 0, sizeof h);
 
    h.magic = btc->testnet ? BTC_NET_MAGIC_TESTNET : BTC_NET_MAGIC_MAIN;
-   h.payloadLength = (uint32)buff_curlen(bufData);
+   h.payloadLength = buff_curlen(bufData);
    strncpy(h.message, message, ARRAYSIZE(h.message));
    hash4_calc(buff_base(bufData), buff_curlen(bufData), h.checksum);
 
@@ -1136,7 +1136,7 @@ void
 btcmsg_print_version(const char            *pfx,
                      const btc_msg_version *v)
 {
-   char *s = print_time_utc((uint32)v->time);
+   char *s = print_time_utc(v->time);
 
    Log(LGPFX" %s: '%s' @%d -- '%s' -- height=%u --svc=%#llx\n",
        pfx, v->strVersion, v->version, s, v->startingHeight, v->services);
@@ -1325,7 +1325,7 @@ btcmsg_parse_inv(struct buff  *buf,
       return res;
    }
 
-   *num = (int)n;
+   *num = n;
    *invOut = inv;
 
    return 0;

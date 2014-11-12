@@ -40,7 +40,7 @@ struct BITCApp {
    struct blockstore       *blockStore;
    struct wallet           *wallet;
    struct addrbook         *book;
-   struct ncui             *ui;
+//   struct ncui             *ui;
    struct peergroup        *peerGroup;
    struct poolworker_state *pw;
    struct mutex            *lock;

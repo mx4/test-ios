@@ -8,6 +8,8 @@
 
 #import "BlockListController.h"
 #import "BlockDetailViewController.h"
+#include "hashtable.h"
+#include "util.h"
 
 @interface BlockListController ()
 
@@ -15,13 +17,41 @@
 
 @implementation BlockListController
 
+static UITableView *blockList;
+static struct hashtable *blockHashTable;
+static int maxHeight;
+
+void
+BlockListAddBlock(int height,
+                  const char *hashStr,
+                  const char *date)
+{
+   NSLog(@"%s", __FUNCTION__);
+   
+   if (blockHashTable == NULL) {
+      blockHashTable = hashtable_create();
+   }
+   
+   NSLog(@"height=%d -- %s", height, hashStr);
+   maxHeight = MAX(maxHeight, height);
+
+   hashtable_insert(blockHashTable, &height, sizeof height, safe_strdup(hashStr));
+   
+   [ blockList beginUpdates];
+   [ blockList insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]]
+                         withRowAnimation:UITableViewRowAnimationRight];
+   [ blockList endUpdates];
+}
+
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    NSLog(@"%s", __FUNCTION__);
+   [super viewDidLoad];
+   blockList = _BlockList;
+
+   NSLog(@"%s", __FUNCTION__);
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+   [super didReceiveMemoryWarning];
 }
 
 #pragma mark - Table view data source
@@ -31,15 +61,34 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1000;
+   NSLog(@"%s", __FUNCTION__);
+   
+   if (blockHashTable == NULL) {
+      return 0;
+   }
+   return hashtable_getnumentries(blockHashTable);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BlockCell"];
-    UILabel *title = (UILabel*) [cell viewWithTag:11];
-    title.text = [NSString stringWithFormat:@"Test_%ld", (long)indexPath.row];
-
-    return cell;
+   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BlockCell"];
+   UILabel *title = (UILabel*) [cell viewWithTag:11];
+   
+   if (blockHashTable) {
+      int index = (long)indexPath.row;
+      int height = maxHeight - index;
+      char *hashStr = NULL;
+      bool s;
+      
+      NSLog(@"idx = %u -- %u blocks", index, height + index);
+      s = hashtable_lookup(blockHashTable, &height, sizeof height, (void *)&hashStr);
+      
+      if (s) {
+         title.text = [NSString stringWithFormat:@"%s", hashStr];
+      } else {
+         NSLog(@"not found");
+      }
+   }
+   return cell;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

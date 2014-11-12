@@ -341,7 +341,6 @@ bitcui_process_update(void)
          break;
       case BTCUI_REQ_WALLET_UPDATE:
          LOG(1, (LGPFX" handling REQ_WALLET_UPDATE\n"));
-//         ncui_wallet_update();
          break;
       case BTCUI_REQ_STATUS_UPDATE:
          LOG(1, (LGPFX" handling REQ_STATUS_UPDATE\n"));
@@ -699,7 +698,8 @@ bitcui_start(bool withui)
    btcui->inuse = withui;
    btcui->lock  = mutex_alloc();
    btcui->cv    = condvar_alloc();
-   btcui->idx   = -1;
+   btcui->blockProdIdx = -1;
+   btcui->blockConsIdx = -1;
 
    if (btcui->inuse == 0) {
       return 0;
@@ -736,7 +736,7 @@ bitcui_set_last_block_info(const uint256 *hash,
    }
 
    if (btcui->numBlocks > 0 &&
-       uint256_issame(hash, &btcui->blocks[btcui->idx].hash)) {
+       uint256_issame(hash, &btcui->blocks[btcui->blockProdIdx].hash)) {
       return;
    }
 
@@ -746,10 +746,10 @@ bitcui_set_last_block_info(const uint256 *hash,
       btcui->numBlocks++;
    }
 
-   btcui->idx = (btcui->idx + 1) % ARRAYSIZE(btcui->blocks);
-   btcui->blocks[btcui->idx].hash      = *hash;
-   btcui->blocks[btcui->idx].height    = height;
-   btcui->blocks[btcui->idx].timestamp = timestamp;
+   btcui->blockProdIdx = (btcui->blockProdIdx + 1) % ARRAYSIZE(btcui->blocks);
+   btcui->blocks[btcui->blockProdIdx].hash      = *hash;
+   btcui->blocks[btcui->blockProdIdx].height    = height;
+   btcui->blocks[btcui->blockProdIdx].timestamp = timestamp;
    btcui->height = height;
 
    mutex_unlock(btcui->lock);

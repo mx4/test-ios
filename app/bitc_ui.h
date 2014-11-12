@@ -80,7 +80,7 @@ struct btcui {
    /*
     * wallets, keys.
     */
-   int                addr_num;
+   int                 addr_num;
    struct bitcui_addr *addr_info;
 
    /*
@@ -110,7 +110,8 @@ struct btcui {
     * ring of recent blocks.
     */
    int                numBlocks;
-   int                idx;
+   int                blockProdIdx;
+   int                blockConsIdx;
    struct bitcui_block blocks[128];
 
    /*
