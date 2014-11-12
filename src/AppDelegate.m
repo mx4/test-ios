@@ -22,7 +22,18 @@
 
 @implementation AppDelegate
 
-static void ReadEventCB(CFFileDescriptorRef fdref, CFOptionFlags callBackTypes, void *info)
+/*
+ *------------------------------------------------------------------------------
+ *
+ * ReadEventCB --
+ *
+ *------------------------------------------------------------------------------
+ */
+
+static void
+ReadEventCB(CFFileDescriptorRef fdref,
+            CFOptionFlags callBackTypes,
+            void *info)
 {
    int data = 0;
    int res;

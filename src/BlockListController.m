@@ -26,8 +26,6 @@ BlockListAddBlock(int height,
                   const char *hashStr,
                   const char *date)
 {
-   NSLog(@"%s", __FUNCTION__);
-   
    if (blockHashTable == NULL) {
       blockHashTable = hashtable_create();
    }
@@ -46,8 +44,6 @@ BlockListAddBlock(int height,
 - (void)viewDidLoad {
    [super viewDidLoad];
    blockList = _BlockList;
-
-   NSLog(@"%s", __FUNCTION__);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,7 +57,6 @@ BlockListAddBlock(int height,
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-   NSLog(@"%s", __FUNCTION__);
    
    if (blockHashTable == NULL) {
       return 0;
@@ -118,7 +113,6 @@ BlockListAddBlock(int height,
         
         detailViewController.blockNumber = [ NSNumber numberWithInt: (int)indexPath.row];
     }
-
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "LogViewController.h"
+#include <stdlib.h>
 
 @interface LogViewController ()
 
@@ -22,7 +23,7 @@ LogViewAppend(const char *pfx,
               const char *line)
 {
    NSString *s = [ NSString stringWithFormat:@"%s: %s", pfx, line ];
-   NSLog(@"%@", s);
+   printf("%s", [ s UTF8String]);
  
    logText = [ NSString stringWithFormat:@"%@ %@", s, logText ? logText : @""];
    logView.text = logText;
