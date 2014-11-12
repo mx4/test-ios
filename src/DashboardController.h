@@ -10,5 +10,11 @@
 
 @interface DashboardController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *addrsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *peersLabel;
+@property (weak, nonatomic) IBOutlet UILabel *heightLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *hashLabel;
+
 @end
 

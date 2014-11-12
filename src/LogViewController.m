@@ -15,18 +15,17 @@
 @implementation LogViewController
 
 static UITextView *logView;
+static NSString *logText;
 
 void
 LogViewAppend(const char *pfx,
               const char *line)
 {
-   NSLog(@"%s: %s", pfx, line);
-   
-   logView.text = [ logView.text stringByAppendingFormat: @"%s: %s", pfx, line ];
+   NSString *s = [ NSString stringWithFormat:@"%s: %s", pfx, line ];
+   NSLog(@"%@", s);
  
-   NSString *s = [ NSString stringWithFormat:@"%s: %s %@", pfx, line, logView.text ];
-   
-   logView.text = s;
+   logText = [ NSString stringWithFormat:@"%@ %@", s, logText ? logText : @""];
+   logView.text = logText;
 }
 
 

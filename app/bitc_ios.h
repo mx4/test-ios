@@ -12,5 +12,6 @@
 #include <stdio.h>
 
 void bitc_ios_log(const char *pfx, const char *line);
+void bitc_ios_info_update(void);
 
 #endif /* defined(__bitc_ios__bitc_ios__) */

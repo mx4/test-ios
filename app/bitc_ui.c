@@ -349,7 +349,7 @@ bitcui_process_update(void)
          break;
       case BTCUI_REQ_INFO_UPDATE:
          LOG(1, (LGPFX" handling REQ_INFO_UPDATE\n"));
-//         ncui_info_update();
+         bitc_ios_info_update();
 //         ncui_peers_update();
          break;
       case BTCUI_REQ_TX_UPDATE:

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9C2739BF1A0EC20000ACAB53 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2739BE1A0EC20000ACAB53 /* libc++.dylib */; };
 		9C2739C41A0EDAE800ACAB53 /* bitc_ui.c in Sources */ = {isa = PBXBuildFile; fileRef = 9C2739C21A0EDAE800ACAB53 /* bitc_ui.c */; };
-		9C34CBF61A11F77D00F2F924 /* ui-interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C34CBF51A11F77D00F2F924 /* ui-interface.m */; };
 		9C34CBF91A11F83F00F2F924 /* bitc_ios.c in Sources */ = {isa = PBXBuildFile; fileRef = 9C34CBF71A11F83F00F2F924 /* bitc_ios.c */; };
 		9C53A5131A0A0BAD000A4511 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A5121A0A0BAD000A4511 /* main.m */; };
 		9C53A5161A0A0BAD000A4511 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A5151A0A0BAD000A4511 /* AppDelegate.m */; };
@@ -54,7 +53,6 @@
 		9C2739BE1A0EC20000ACAB53 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		9C2739C21A0EDAE800ACAB53 /* bitc_ui.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = bitc_ui.c; path = app/bitc_ui.c; sourceTree = "<group>"; };
 		9C2739C31A0EDAE800ACAB53 /* bitc_ui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bitc_ui.h; path = app/bitc_ui.h; sourceTree = "<group>"; };
-		9C34CBF51A11F77D00F2F924 /* ui-interface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ui-interface.m"; sourceTree = "<group>"; };
 		9C34CBF71A11F83F00F2F924 /* bitc_ios.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = bitc_ios.c; path = app/bitc_ios.c; sourceTree = "<group>"; };
 		9C34CBF81A11F83F00F2F924 /* bitc_ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bitc_ios.h; path = app/bitc_ios.h; sourceTree = "<group>"; };
 		9C53A50D1A0A0BAD000A4511 /* bitc-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bitc-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,9 +192,9 @@
 			children = (
 				9C53A5141A0A0BAD000A4511 /* AppDelegate.h */,
 				9C53A5151A0A0BAD000A4511 /* AppDelegate.m */,
-				9C53A51A1A0A0BAD000A4511 /* DashboardController.h */,
 				9CE4B4F11A0AD41C005E878D /* BlockListController.h */,
 				9CE4B4F21A0AD41C005E878D /* BlockListController.m */,
+				9C53A51A1A0A0BAD000A4511 /* DashboardController.h */,
 				9C53A51B1A0A0BAD000A4511 /* DashboardController.m */,
 				9C53A51D1A0A0BAD000A4511 /* Main.storyboard */,
 				9CD6200C1A0CBCFD0014E9D7 /* BlockDetailViewController.h */,
@@ -207,7 +205,6 @@
 				9C53A5401A0A1A5F000A4511 /* LogViewController.m */,
 				9C53A5201A0A0BAD000A4511 /* Images.xcassets */,
 				9C53A5101A0A0BAD000A4511 /* Supporting Files */,
-				9C34CBF51A11F77D00F2F924 /* ui-interface.m */,
 			);
 			name = "bitc-ios";
 			path = "/Users/maxime/git/test-ios/src";
@@ -475,7 +472,6 @@
 				9CE01C6B1A0D399700FD5A13 /* util.c in Sources */,
 				9C53A5131A0A0BAD000A4511 /* main.m in Sources */,
 				9CE01C9A1A0D3E1500FD5A13 /* key.c in Sources */,
-				9C34CBF61A11F77D00F2F924 /* ui-interface.m in Sources */,
 				9CE01C661A0D399700FD5A13 /* hashtable.c in Sources */,
 				9CE01C9F1A0D3E1500FD5A13 /* serialize.c in Sources */,
 				9CE01C981A0D3E1500FD5A13 /* crypt.c in Sources */,
