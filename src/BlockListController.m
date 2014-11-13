@@ -8,8 +8,10 @@
 
 #import "BlockListController.h"
 #import "BlockDetailViewController.h"
-#include "hashtable.h"
+
 #include "util.h"
+#include "block-store.h"
+#include "bitc.h"
 
 @interface BlockListController ()
 
@@ -18,25 +20,31 @@
 @implementation BlockListController
 
 static UITableView *blockList;
-static struct hashtable *blockHashTable;
 static int maxHeight;
 
 void
-BlockListAddBlock(int height,
-                  const char *hashStr,
-                  const char *date)
+BlockListAddBlock(int height)
 {
-   if (blockHashTable == NULL) {
-      blockHashTable = hashtable_create();
+   if (height == 0) {
+      return;
+   }
+   NSMutableArray *indexPaths = [NSMutableArray array];
+   
+   if (height - maxHeight > 100) {
+      [blockList reloadData];
+      maxHeight = height;
+      return;
    }
    
-   NSLog(@"height=%d -- %s", height, hashStr);
+   // XXX:
+   for (int i = 0; i < height - maxHeight; i++) {
+      [indexPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
+   }
+   
    maxHeight = MAX(maxHeight, height);
-
-   hashtable_insert(blockHashTable, &height, sizeof height, safe_strdup(hashStr));
    
    [ blockList beginUpdates];
-   [ blockList insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]]
+   [ blockList insertRowsAtIndexPaths:indexPaths
                          withRowAnimation:UITableViewRowAnimationRight];
    [ blockList endUpdates];
 }
@@ -53,35 +61,33 @@ BlockListAddBlock(int height,
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+   return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-   
-   if (blockHashTable == NULL) {
-      return 0;
-   }
-   return hashtable_getnumentries(blockHashTable);
+   return maxHeight;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BlockCell"];
-   UILabel *title = (UILabel*) [cell viewWithTag:11];
-   
-   if (blockHashTable) {
-      int index = (long)indexPath.row;
-      int height = maxHeight - index;
-      char *hashStr = NULL;
-      bool s;
+   int height = maxHeight - (long) indexPath.row;
+   btc_block_header hdr;
+   uint256 hash;
+   bool s;
       
-      NSLog(@"idx = %u -- %u blocks", index, height + index);
-      s = hashtable_lookup(blockHashTable, &height, sizeof height, (void *)&hashStr);
+   s = blockstore_get_block_at_height(btc->blockStore, height, &hash, &hdr);
+   if (s) {
+      char hashStr[80];
+      char *ts;
       
-      if (s) {
-         title.text = [NSString stringWithFormat:@"%s", hashStr];
-      } else {
-         NSLog(@"not found");
-      }
+      ts = print_time_local_short(hdr.timestamp);
+      uint256_snprintf_reverse(hashStr, sizeof hashStr, &hash);
+
+      cell.textLabel.text = [NSString stringWithFormat:@"%u %s", height, ts];
+      cell.detailTextLabel.text = [NSString stringWithFormat:@"%s", hashStr];
+      free(ts);
+   } else {
+      NSLog(@"not found");
    }
    return cell;
 }

@@ -13,6 +13,7 @@
 #include "bitc_ui.h"
 #include "util.h"
 #include "bitc.h"
+#include "block-store.h"
 
 void
 LogViewAppend(const char *pfx,
@@ -25,11 +26,7 @@ DashboardUpdate(int height,
                 int total, int numAddrs,
                 const char *date);
 
-void
-BlockListAddBlock(int height,
-                  const char *hashStr,
-                  const char *date);
-
+void BlockListAddBlock(int height);
 
 
 /*
@@ -92,26 +89,12 @@ bitc_ios_dashboard_update(void)
 void
 bitc_ios_blocklist_update(void)
 {
+   int height;
+   
    ASSERT(mutex_islocked(btcui->lock));
 
-   while (btcui->blockConsIdx != btcui->blockProdIdx) {
-      char hashStr[80];
-      uint256 *hash;
-      uint32 timestamp;
-      int height;
-      char *ts;
-
-      btcui->blockConsIdx = (btcui->blockConsIdx + 1) % ARRAYSIZE(btcui->blocks);
-
-      hash      = &btcui->blocks[btcui->blockConsIdx].hash;
-      height    =  btcui->blocks[btcui->blockConsIdx].height;
-      timestamp =  btcui->blocks[btcui->blockConsIdx].timestamp;
-
-      uint256_snprintf_reverse(hashStr, sizeof hashStr, hash);
-      ts = print_time_local_short(timestamp);
-      
-      BlockListAddBlock(height, hashStr, ts);
-   }
+   height = blockstore_get_height(btc->blockStore);
+   BlockListAddBlock(height);
 }
 
 
