@@ -118,7 +118,7 @@ BlockListAddBlock(int height)
 
       NSLog(@"%s: %@ (height=%u)", __FUNCTION__, [segue identifier], height);
       
-      detailViewController.blockNumber = [ NSNumber numberWithInt: height];
+      detailViewController.blockNumber = @(height);
    }
 }
 

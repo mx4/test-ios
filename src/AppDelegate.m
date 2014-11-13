@@ -61,7 +61,7 @@ ReadEventCB(CFFileDescriptorRef fdref,
    /* make sure cocoa knows we're multithreaded */
    [[NSThread new] start];
 
-   path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+   path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
    path = [NSString stringWithFormat:@"%@/../", path ];
    path = [path stringByStandardizingPath];
    

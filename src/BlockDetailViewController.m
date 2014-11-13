@@ -39,13 +39,13 @@
    ts = print_time_local(hdr.timestamp, "%a, %d %b %Y %T");
    uint256_snprintf_reverse(hashStr, sizeof hashStr, &hash);
    
-   _hashStr = [ NSString stringWithUTF8String: hashStr ];
+   _hashStr = @(hashStr);
       
    _timestampLabel.text    = [NSString stringWithFormat:@"%s", ts];
    _nonceLabel.text        = [NSString stringWithFormat:@"0x%x", hdr.nonce];
    _bitsLabel.text         = [NSString stringWithFormat:@"%u", hdr.bits];
    _blockVersionLabel.text = [NSString stringWithFormat:@"%u", hdr.version];
-   _blockNumberLabel.text = [NSString stringWithFormat:@"%s", hashStr];
+   _blockNumberLabel.text  = [NSString stringWithFormat:@"%s", hashStr];
 
    free(ts);
    NSLog(@"%s: %@", __FUNCTION__, _blockNumber);
