@@ -25,7 +25,7 @@ static int maxHeight;
 void
 BlockListAddBlock(int height)
 {
-   if (height == 0) {
+   if (height == 0 || height == maxHeight) {
       return;
    }
    NSMutableArray *indexPaths = [NSMutableArray array];
@@ -35,8 +35,7 @@ BlockListAddBlock(int height)
       maxHeight = height;
       return;
    }
-   
-   // XXX:
+ 
    for (int i = 0; i < height - maxHeight; i++) {
       [indexPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
    }
@@ -74,7 +73,7 @@ BlockListAddBlock(int height)
    btc_block_header hdr;
    uint256 hash;
    bool s;
-      
+   
    s = blockstore_get_block_at_height(btc->blockStore, height, &hash, &hdr);
    if (s) {
       char hashStr[80];
@@ -83,12 +82,13 @@ BlockListAddBlock(int height)
       ts = print_time_local_short(hdr.timestamp);
       uint256_snprintf_reverse(hashStr, sizeof hashStr, &hash);
 
-      cell.textLabel.text = [NSString stringWithFormat:@"%u %s", height, ts];
+      cell.textLabel.text = [NSString stringWithFormat:@"%u -- %s", height, ts];
       cell.detailTextLabel.text = [NSString stringWithFormat:@"%s", hashStr];
       free(ts);
    } else {
       NSLog(@"not found");
    }
+   
    return cell;
 }
 
@@ -111,14 +111,15 @@ BlockListAddBlock(int height)
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSLog(@"%s: %@", __FUNCTION__, [segue identifier]);
-    
-    if ([[segue identifier] isEqualToString:@"ShowBlockDetail"]) {
-        BlockDetailViewController *detailViewController = [segue destinationViewController];
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        
-        detailViewController.blockNumber = [ NSNumber numberWithInt: (int)indexPath.row];
-    }
+   if ([[segue identifier] isEqualToString:@"ShowBlockDetail"]) {
+      BlockDetailViewController *detailViewController = [segue destinationViewController];
+      NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+      int height = maxHeight - (long) indexPath.row;
+
+      NSLog(@"%s: %@ (height=%u)", __FUNCTION__, [segue identifier], height);
+      
+      detailViewController.blockNumber = [ NSNumber numberWithInt: height];
+   }
 }
 
 @end

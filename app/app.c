@@ -253,7 +253,7 @@ bitc_openssl_init(void)
  *
  *------------------------------------------------------------------------
  */
-
+#if 0
 static void
 bitc_openssl_exit(void)
 {
@@ -266,6 +266,7 @@ bitc_openssl_exit(void)
    }
    OPENSSL_free(ssl_mutex_array);
 }
+#endif
 
 
 /*
