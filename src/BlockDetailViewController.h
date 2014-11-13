@@ -17,5 +17,6 @@
 
 @property (strong, nonatomic) NSNumber         *blockNumber;
 @property (strong, nonatomic) IBOutlet UILabel *blockNumberLabel;
+@property (strong, nonatomic) NSString         *hashStr;
 
 @end

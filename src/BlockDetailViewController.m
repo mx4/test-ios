@@ -7,6 +7,7 @@
 //
 
 #import "BlockDetailViewController.h"
+#import "WebViewController.h"
 
 #include "block-store.h"
 #include "bitc.h"
@@ -21,19 +22,6 @@
 
 @synthesize blockNumber = _blockNumber;
 @synthesize blockNumberLabel = _blockNumberLabel;
-//@synthesize blockNumberLabel = _blockNumberLabel;
-
-#if 0
-typedef struct btc_block_header {
-   uint32       version;
-   uint256      prevBlock;
-   uint256      merkleRoot;
-   uint32       timestamp;
-   uint32       bits;
-   uint32       nonce;
-} btc_block_header;
-#endif
-
 
 - (void)viewDidLoad {
    [super viewDidLoad];
@@ -45,27 +33,42 @@ typedef struct btc_block_header {
    int height;
    
    height = [ _blockNumber integerValue];
-   
    self.title = [ NSString stringWithFormat:@"%u", height ];
 
    s = blockstore_get_block_at_height(btc->blockStore, height, &hash, &hdr);
-   
    ts = print_time_local(hdr.timestamp, "%a, %d %b %Y %T");
    uint256_snprintf_reverse(hashStr, sizeof hashStr, &hash);
+   
+   _hashStr = [ NSString stringWithUTF8String: hashStr ];
       
-   _timestampLabel.text = [NSString stringWithFormat:@"%s", ts];
-   _nonceLabel.text = [NSString stringWithFormat:@"0x%x", hdr.nonce];
-   _bitsLabel.text = [NSString stringWithFormat:@"%u", hdr.bits];
+   _timestampLabel.text    = [NSString stringWithFormat:@"%s", ts];
+   _nonceLabel.text        = [NSString stringWithFormat:@"0x%x", hdr.nonce];
+   _bitsLabel.text         = [NSString stringWithFormat:@"%u", hdr.bits];
    _blockVersionLabel.text = [NSString stringWithFormat:@"%u", hdr.version];
-//   cell.detailTextLabel.text = [NSString stringWithFormat:@"%s", hashStr];
-   free(ts);
-
    _blockNumberLabel.text = [NSString stringWithFormat:@"%s", hashStr];
+
+   free(ts);
    NSLog(@"%s: %@", __FUNCTION__, _blockNumber);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - Navigation
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+   NSString *s = [ segue identifier ];
+   
+   NSLog(@"%s: %@", __FUNCTION__, s);
+   
+   if ([s isEqualToString:@"ShowWebView1"] ||
+       [s isEqualToString:@"ShowWebView2"]) {
+      WebViewController *viewController = [segue destinationViewController];
+      NSLog(@"%s: %@ (block#=%@)", __FUNCTION__, s, _blockNumber);
+      viewController.hashStr = _hashStr;
+   }
 }
 
 @end

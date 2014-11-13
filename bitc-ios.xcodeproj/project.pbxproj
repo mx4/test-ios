@@ -16,6 +16,7 @@
 		9C53A51F1A0A0BAD000A4511 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C53A51D1A0A0BAD000A4511 /* Main.storyboard */; };
 		9C53A5211A0A0BAD000A4511 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C53A5201A0A0BAD000A4511 /* Images.xcassets */; };
 		9C53A5411A0A1A5F000A4511 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A5401A0A1A5F000A4511 /* LogViewController.m */; };
+		9C705C031A15325B00C470C3 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C705C021A15325B00C470C3 /* WebViewController.m */; };
 		9C9391AE1A10AFBC0074EB8B /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9391AB1A10AFBC0074EB8B /* libcrypto.a */; };
 		9C9391AF1A10AFBC0074EB8B /* libleveldb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9391AC1A10AFBC0074EB8B /* libleveldb.a */; };
 		9C9391B01A10AFBC0074EB8B /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9391AD1A10AFBC0074EB8B /* libssl.a */; };
@@ -65,6 +66,8 @@
 		9C53A5201A0A0BAD000A4511 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9C53A53F1A0A1A5F000A4511 /* LogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogViewController.h; sourceTree = "<group>"; };
 		9C53A5401A0A1A5F000A4511 /* LogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogViewController.m; sourceTree = "<group>"; };
+		9C705C011A15325B00C470C3 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		9C705C021A15325B00C470C3 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		9C9391AB1A10AFBC0074EB8B /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "3rd-party/binaries/libcrypto.a"; sourceTree = "<group>"; };
 		9C9391AC1A10AFBC0074EB8B /* libleveldb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleveldb.a; path = "3rd-party/binaries/libleveldb.a"; sourceTree = "<group>"; };
 		9C9391AD1A10AFBC0074EB8B /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "3rd-party/binaries/libssl.a"; sourceTree = "<group>"; };
@@ -191,6 +194,8 @@
 				9C53A5151A0A0BAD000A4511 /* AppDelegate.m */,
 				9CD6200C1A0CBCFD0014E9D7 /* BlockDetailViewController.h */,
 				9CD6200D1A0CBCFD0014E9D7 /* BlockDetailViewController.m */,
+				9C705C011A15325B00C470C3 /* WebViewController.h */,
+				9C705C021A15325B00C470C3 /* WebViewController.m */,
 				9CE4B4F11A0AD41C005E878D /* BlockListController.h */,
 				9CE4B4F21A0AD41C005E878D /* BlockListController.m */,
 				9C53A51A1A0A0BAD000A4511 /* DashboardController.h */,
@@ -481,6 +486,7 @@
 				9CE01C961A0D3E1500FD5A13 /* bloom.c in Sources */,
 				9CE01C6A1A0D399700FD5A13 /* poolworker.c in Sources */,
 				9CE01C941A0D3E1500FD5A13 /* base58.c in Sources */,
+				9C705C031A15325B00C470C3 /* WebViewController.m in Sources */,
 				9CE01C9E1A0D3E1500FD5A13 /* script.c in Sources */,
 				9CE01C9D1A0D3E1500FD5A13 /* rpc.c in Sources */,
 				9CE01C931A0D3E1500FD5A13 /* addrbook.c in Sources */,

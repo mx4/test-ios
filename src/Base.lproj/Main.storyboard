@@ -84,7 +84,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fri Nov  7 15:02:56 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96l-Jh-Dhr">
-                                <rect key="frame" x="85" y="64" width="279" height="21.5"/>
+                                <rect key="frame" x="85" y="64" width="279" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -169,7 +169,7 @@
                         <sections>
                             <tableViewSection id="jNr-Bg-vFR">
                                 <cells>
-                                    <tableViewCell contentMode="center" selectionStyle="none" indentationWidth="6" textLabel="A12-a1-dPK" style="IBUITableViewCellStyleDefault" id="EyQ-CX-utR">
+                                    <tableViewCell contentMode="center" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="6" textLabel="A12-a1-dPK" style="IBUITableViewCellStyleDefault" id="EyQ-CX-utR">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EyQ-CX-utR" id="yHb-3I-G7G">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -182,6 +182,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="mgx-V1-YHf" kind="show" identifier="ShowWebView1" id="fjy-sO-qvA"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -299,7 +302,6 @@
                     </tableView>
                     <connections>
                         <outlet property="bitsLabel" destination="opr-y4-mkk" id="fnp-G7-BsZ"/>
-                        <outlet property="blockNumberLabel" destination="A12-a1-dPK" id="jHq-b3-C8x"/>
                         <outlet property="blockVersionLabel" destination="lW7-MV-dsS" id="PS5-n8-r89"/>
                         <outlet property="nonceLabel" destination="cXZ-sQ-kar" id="Kyf-Vt-pns"/>
                         <outlet property="timestampLabel" destination="X4o-Q1-NtU" id="Qey-ac-KoC"/>
@@ -308,6 +310,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yNf-TZ-jCy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="748" y="156"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="pEG-uS-1ij">
+            <objects>
+                <viewController id="mgx-V1-YHf" customClass="WebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4kz-Hf-JRL"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Sj-xW-wBO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zzC-hx-jSM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hDi-bH-iaU">
+                                <rect key="frame" x="-120" y="-29" width="720" height="629"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <dataDetectorType key="dataDetectorTypes"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="hDi-bH-iaU" id="ESM-o5-Nrn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Paj-tv-Uuf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1548" y="156"/>
         </scene>
         <!--Logs-->
         <scene sceneID="gYZ-WG-fsf">

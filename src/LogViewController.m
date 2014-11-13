@@ -23,7 +23,7 @@ LogViewAppend(const char *pfx,
               const char *line)
 {
    NSString *s = [ NSString stringWithFormat:@"%s: %s", pfx, line ];
-   printf("%s", [ s UTF8String]);
+//   printf("%s", [ s UTF8String]);
  
    logText = [ NSString stringWithFormat:@"%@ %@", s, logText ? logText : @""];
    logView.text = logText;
