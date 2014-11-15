@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C143A8E1A17A28700C735A8 /* libcrypto_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C143A8C1A17A28700C735A8 /* libcrypto_iOS.a */; };
+		9C143A8F1A17A28700C735A8 /* libssl_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C143A8D1A17A28700C735A8 /* libssl_iOS.a */; };
 		9C2739BF1A0EC20000ACAB53 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2739BE1A0EC20000ACAB53 /* libc++.dylib */; };
 		9C2739C41A0EDAE800ACAB53 /* bitc_ui.c in Sources */ = {isa = PBXBuildFile; fileRef = 9C2739C21A0EDAE800ACAB53 /* bitc_ui.c */; };
 		9C34CBF91A11F83F00F2F924 /* bitc_ios.c in Sources */ = {isa = PBXBuildFile; fileRef = 9C34CBF71A11F83F00F2F924 /* bitc_ios.c */; };
@@ -17,9 +19,7 @@
 		9C53A5211A0A0BAD000A4511 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C53A5201A0A0BAD000A4511 /* Images.xcassets */; };
 		9C53A5411A0A1A5F000A4511 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A5401A0A1A5F000A4511 /* LogViewController.m */; };
 		9C705C031A15325B00C470C3 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C705C021A15325B00C470C3 /* WebViewController.m */; };
-		9C9391AE1A10AFBC0074EB8B /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9391AB1A10AFBC0074EB8B /* libcrypto.a */; };
 		9C9391AF1A10AFBC0074EB8B /* libleveldb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9391AC1A10AFBC0074EB8B /* libleveldb.a */; };
-		9C9391B01A10AFBC0074EB8B /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9391AD1A10AFBC0074EB8B /* libssl.a */; };
 		9CD6200E1A0CBCFD0014E9D7 /* BlockDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6200D1A0CBCFD0014E9D7 /* BlockDetailViewController.m */; };
 		9CDCFBCB1A0EE2BB002E2810 /* app.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CDCFBCA1A0EE2BB002E2810 /* app.c */; };
 		9CE01C451A0D398900FD5A13 /* cJSON.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01C3F1A0D398900FD5A13 /* cJSON.c */; };
@@ -50,6 +50,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C143A8C1A17A28700C735A8 /* libcrypto_iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto_iOS.a; path = "3rd-party/binaries/libcrypto_iOS.a"; sourceTree = "<group>"; };
+		9C143A8D1A17A28700C735A8 /* libssl_iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl_iOS.a; path = "3rd-party/binaries/libssl_iOS.a"; sourceTree = "<group>"; };
 		9C2739BE1A0EC20000ACAB53 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		9C2739C21A0EDAE800ACAB53 /* bitc_ui.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = bitc_ui.c; path = app/bitc_ui.c; sourceTree = "<group>"; };
 		9C2739C31A0EDAE800ACAB53 /* bitc_ui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bitc_ui.h; path = app/bitc_ui.h; sourceTree = "<group>"; };
@@ -68,9 +70,7 @@
 		9C53A5401A0A1A5F000A4511 /* LogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogViewController.m; sourceTree = "<group>"; };
 		9C705C011A15325B00C470C3 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		9C705C021A15325B00C470C3 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
-		9C9391AB1A10AFBC0074EB8B /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "3rd-party/binaries/libcrypto.a"; sourceTree = "<group>"; };
 		9C9391AC1A10AFBC0074EB8B /* libleveldb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleveldb.a; path = "3rd-party/binaries/libleveldb.a"; sourceTree = "<group>"; };
-		9C9391AD1A10AFBC0074EB8B /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "3rd-party/binaries/libssl.a"; sourceTree = "<group>"; };
 		9CD6200C1A0CBCFD0014E9D7 /* BlockDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockDetailViewController.h; sourceTree = "<group>"; };
 		9CD6200D1A0CBCFD0014E9D7 /* BlockDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockDetailViewController.m; sourceTree = "<group>"; };
 		9CDCFBCA1A0EE2BB002E2810 /* app.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = app.c; path = app/app.c; sourceTree = "<group>"; };
@@ -140,8 +140,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C9391B01A10AFBC0074EB8B /* libssl.a in Frameworks */,
-				9C9391AE1A10AFBC0074EB8B /* libcrypto.a in Frameworks */,
+				9C143A8E1A17A28700C735A8 /* libcrypto_iOS.a in Frameworks */,
+				9C143A8F1A17A28700C735A8 /* libssl_iOS.a in Frameworks */,
 				9C9391AF1A10AFBC0074EB8B /* libleveldb.a in Frameworks */,
 				9C2739BF1A0EC20000ACAB53 /* libc++.dylib in Frameworks */,
 			);
@@ -165,9 +165,9 @@
 		9C53A5041A0A0BAD000A4511 = {
 			isa = PBXGroup;
 			children = (
-				9C9391AB1A10AFBC0074EB8B /* libcrypto.a */,
+				9C143A8C1A17A28700C735A8 /* libcrypto_iOS.a */,
+				9C143A8D1A17A28700C735A8 /* libssl_iOS.a */,
 				9C9391AC1A10AFBC0074EB8B /* libleveldb.a */,
-				9C9391AD1A10AFBC0074EB8B /* libssl.a */,
 				9C2739BE1A0EC20000ACAB53 /* libc++.dylib */,
 				9C2739C51A0EDCD000ACAB53 /* app */,
 				9CE01C731A0D3E1500FD5A13 /* core */,
@@ -423,6 +423,7 @@
 				TargetAttributes = {
 					9C53A50C1A0A0BAD000A4511 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 8QD327TWF2;
 					};
 				};
 			};
@@ -540,7 +541,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
@@ -576,7 +577,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
@@ -595,6 +596,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"GCC_WARN_64_TO_32_BIT_CONVERSION[arch=*64]" = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -613,6 +616,7 @@
 				);
 				New_Setting = "";
 				PRODUCT_NAME = "bitc-ios";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(PROJECT_DIR)/public";
@@ -624,6 +628,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				"HEADER_SEARCH_PATHS[arch=*]" = /Users/maxime/git/leveldb/include;
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info.plist";
@@ -634,6 +640,7 @@
 				);
 				New_Setting = "";
 				PRODUCT_NAME = "bitc-ios";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(PROJECT_DIR)/public";

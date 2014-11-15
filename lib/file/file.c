@@ -51,7 +51,6 @@ file_chmod(const char *filename,
       return 0;
    }
    res = errno;
-   ASSERT(res == -1);
 
    Log(LGPFX" failed to chmod %s to 0x%x: %s\n",
        filename, mode, strerror(res));
