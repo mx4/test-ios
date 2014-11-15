@@ -26,7 +26,6 @@ DashboardUpdate(int height,
                 int numAddrs,
                 const char *date)
 {
-
    heightLbl.text = [ NSString stringWithFormat:@"%u", height ];
    dateLbl.text   = [ NSString stringWithFormat:@"%s", date ];
    peersLbl.text  = [ NSString stringWithFormat:@"%u / %u", connected, total ];

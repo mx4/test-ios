@@ -56,20 +56,30 @@ bitc_ios_log(const char *pfx,
 void
 bitc_ios_dashboard_update(void)
 {
+   btc_block_header hdr;
    char hashStr[80];
-   uint32 timestamp;
    char *ts = NULL;
-
+   uint256 hash;
+   int height;
+   bool s;
+   
+   if (btc->blockStore == NULL) {
+      return;
+   }
+   
+   height = blockstore_get_height(btc->blockStore);
+   if (height == 0) {
+      return;
+   }
+   
+   s = blockstore_get_block_at_height(btc->blockStore, height, &hash, &hdr);
+ 
    ASSERT(mutex_islocked(btcui->lock));
 
-   uint256_snprintf_reverse(hashStr, sizeof hashStr,
-                            &btcui->blocks[btcui->blockProdIdx].hash);
-   timestamp = btcui->blocks[btcui->blockProdIdx].timestamp;
-   if (timestamp) {
-      ts = print_time_local(timestamp, "%c");
-   }
+   uint256_snprintf_reverse(hashStr, sizeof hashStr, &hash);
+   ts = print_time_local(hdr.timestamp, "%c");
 
-   DashboardUpdate(btcui->height, hashStr,
+   DashboardUpdate(height, hashStr,
                    btcui->num_peers_active,
                    btcui->num_peers_alive,
                    btcui->num_addrs,
