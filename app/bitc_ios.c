@@ -15,19 +15,6 @@
 #include "bitc.h"
 #include "block-store.h"
 
-void
-LogViewAppend(const char *pfx,
-              const char *line);
-
-void
-DashboardUpdate(int height,
-                const char *hash,
-                int connected,
-                int total, int numAddrs,
-                const char *date);
-
-void BlockListAddBlock(int height);
-
 
 /*
  *-------------------------------------------------------------------
@@ -62,18 +49,18 @@ bitc_ios_dashboard_update(void)
    uint256 hash;
    int height;
    bool s;
-   
+
    if (btc->blockStore == NULL) {
       return;
    }
-   
+
    height = blockstore_get_height(btc->blockStore);
    if (height == 0) {
       return;
    }
-   
+
    s = blockstore_get_block_at_height(btc->blockStore, height, &hash, &hdr);
- 
+
    ASSERT(mutex_islocked(btcui->lock));
 
    uint256_snprintf_reverse(hashStr, sizeof hashStr, &hash);
@@ -100,7 +87,7 @@ void
 bitc_ios_blocklist_update(void)
 {
    int height;
-   
+
    ASSERT(mutex_islocked(btcui->lock));
 
    height = blockstore_get_height(btc->blockStore);

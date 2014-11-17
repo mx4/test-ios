@@ -66,10 +66,8 @@ ReadEventCB(CFFileDescriptorRef fdref,
    path = [path stringByStandardizingPath];
    
    NSLog(@"%@", path);
-
-   bitc_set_directory([path UTF8String]);
  
-   res = bitc_app_init();
+   res = bitc_app_init([ path UTF8String]);
    if (res) {
       NSLog(@"bitc_app_init: %d\n", res);
    }

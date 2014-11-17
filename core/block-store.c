@@ -218,10 +218,7 @@ blockstore_get_block_height(struct blockstore *bs,
       char hashStr[80];
 
       uint256_snprintf_reverse(hashStr, sizeof hashStr, hash);
-      Warning(LGPFX" block %s not found.\n", hashStr);
-      ASSERT(0);
-      height = 0;
-      goto done;
+      Panic(LGPFX" block %s not found.\n", hashStr);
    }
 
    height = be->height;

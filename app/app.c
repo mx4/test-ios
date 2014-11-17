@@ -8,14 +8,7 @@
 #include <signal.h>
 #include <pthread.h>
 
-#if 0
-#include <curl/curl.h>
-#endif
-#include <termios.h>
-
-#ifdef __APPLE__
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#endif
 #include <openssl/crypto.h>
 #include <openssl/ssl.h>
 
@@ -23,22 +16,16 @@
 
 #include "block-store.h"
 #include "peergroup.h"
-#include "poolworker.h"
 #include "util.h"
-#include "hashtable.h"
 #include "wallet.h"
 #include "config.h"
 #include "poll.h"
 #include "netasync.h"
 #include "key.h"
 #include "addrbook.h"
-//#include "serialize.h"
 #include "file.h"
 #include "bitc.h"
-#include "buff.h"
 #include "base58.h"
-#include "ip_info.h"
-#include "crypt.h"
 #include "rpc.h"
 #include "bitc_ui.h"
 
@@ -64,6 +51,8 @@ static void bitc_sigint_handler(int sig);
 static struct BITCApp theBitcApp;
 struct BITCApp *btc = &theBitcApp;
 bool bitc_testing = 0;
+
+static char *basePath = NULL;
 
 
 /*
@@ -269,23 +258,6 @@ bitc_check_create_file(const char *filename,
    return res;
 }
 
-/*
- *------------------------------------------------------------------------
- *
- * bitc_set_directory --
- *
- *------------------------------------------------------------------------
- */
-
-static char *basePath = NULL;
-
-void
-bitc_set_directory(const char *path)
-{
-   basePath = safe_strdup(path);
-   Log("path: '%s'\n", basePath);
-}
-
 
 /*
  *------------------------------------------------------------------------
@@ -298,19 +270,9 @@ bitc_set_directory(const char *path)
 char *
 bitc_get_directory(void)
 {
-   char *res;
-#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
    ASSERT(basePath);
-   res = safe_asprintf("%s/Library", basePath);
-#else
-   char *home;
 
-   home = util_gethomedir();
-   res = safe_asprintf("%s/.bitc%s", home, btc->testnet ? "-testnet" : "");
-   free(home);
-
-#endif
-   return res;
+   return safe_asprintf("%s/Library", basePath);
 }
 
 
@@ -864,7 +826,7 @@ bitc_init(struct secure_area *passphrase,
  *----------------------------------------------------------------
  */
 
-static void
+void
 bitc_exit(void)
 {
    Log(LGPFX" %s\n", __FUNCTION__);
@@ -970,17 +932,21 @@ bitc_app_exit(void)
  */
 
 int
-bitc_app_init(void)
+bitc_app_init(const char *path)
 {
    char *configPath = NULL;
    int res;
+
+   basePath = safe_strdup(path);
+   Log("path: '%s'\n", basePath);
 
    bitc_signal_install();
    Log_SetLevel(1);
    {
       char *login = safe_strdup("ios");
       char *logFile;
-      logFile = safe_asprintf("/tmp/bitc-%s%s.log",
+      logFile = safe_asprintf("%s/tmp/bitc-%s%s.log",
+                              basePath,
                               login ? login : "foo",
                               btc->testnet ? "-testnet" : "");
       Log_Init(logFile);
