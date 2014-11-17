@@ -219,7 +219,7 @@ blockstore_get_block_height(struct blockstore *bs,
 
       uint256_snprintf_reverse(hashStr, sizeof hashStr, hash);
       Warning(LGPFX" block %s not found.\n", hashStr);
-      //ASSERT(0);
+      ASSERT(0);
       height = 0;
       goto done;
    }
@@ -1036,23 +1036,28 @@ blockstore_exit(struct blockstore *bs)
 
 void
 blockstore_get_hash_from_birth(const struct blockstore *bs,
-                               time_t                   birth,
+                               uint64                   birth,
                                uint256                 *hash)
 {
    struct blockentry *e;
-
+   
    for (e = bs->best_chain; e != bs->genesis; e = e->prev)  {
       if (e->header.timestamp < birth) {
          char hashStr[80];
+         char *s;
          uint64 ts = birth;
 
          hash256_calc(&e->header, sizeof e->header, hash);
+
          uint256_snprintf_reverse(hashStr, sizeof hashStr, hash);
-         Log(LGPFX" birth %llu --> block %s.\n", ts, hashStr);
+         s = print_time_local(birth, "%c");
+         Log(LGPFX" birth %llu (%s) --> block %s.\n", ts, s, hashStr);
+         free(s);
          return;
       }
    }
    memcpy(hash, &bs->genesis_hash, sizeof *hash);
+   ASSERT(0);
 }
 
 

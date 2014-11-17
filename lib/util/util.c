@@ -14,6 +14,7 @@
 #include <errno.h>
 #include <execinfo.h>
 #include <pthread.h>
+#include <assert.h>
 
 #include <sys/types.h>
 #include <pwd.h>
@@ -349,6 +350,7 @@ print_backtrace(void)
    }
    for (i = 0; i < bufSize; i++) {
       Warning(LGPFX" [%d] = %s\n", i, btStr[i]);
+      printf( LGPFX" [%d] = %s\n", i, btStr[i]);
    }
    free(btStr);
 }
@@ -418,8 +420,7 @@ dump:
    /*
     * Generate a core-dump.
     */
-   kill(getpid(), SIGABRT);
-   _exit(1); /* should not be required */
+   abort();
 }
 
 
@@ -908,7 +909,7 @@ print_time_utc(uint32 time)
  */
 
 char *
-print_time_local_short(uint32 time)
+print_time_local_short(uint64 time)
 {
    char str[128];
    struct tm *ts;
@@ -934,7 +935,7 @@ print_time_local_short(uint32 time)
  */
 
 char *
-print_time_local(uint32 time,
+print_time_local(uint64 time,
                  const char *fmt)
 {
    char str[128];

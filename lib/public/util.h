@@ -22,8 +22,8 @@ void Log_Bytes(const char *pfx, const void *data, size_t len);
 mtime_t time_get(void);
 
 char *print_time_utc(uint32 t);
-char *print_time_local(uint32 t, const char *fmt);
-char *print_time_local_short(uint32 time);
+char *print_time_local(uint64 t, const char *fmt);
+char *print_time_local_short(uint64 time);
 char *print_size(uint64 size);
 char *print_latency(mtime_t latency);
 void  print_backtrace(void);

@@ -57,15 +57,15 @@ ReadEventCB(CFFileDescriptorRef fdref,
    CFRunLoopSourceRef source;
    NSString *path;
    int res;
-
+   
    /* make sure cocoa knows we're multithreaded */
    [[NSThread new] start];
 
-   path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+   path = [ NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject ];
    path = [NSString stringWithFormat:@"%@/../", path ];
    path = [path stringByStandardizingPath];
    
-   NSLog(@"%s: %@", __FUNCTION__, path);
+   NSLog(@"%@", path);
 
    bitc_set_directory([path UTF8String]);
  
